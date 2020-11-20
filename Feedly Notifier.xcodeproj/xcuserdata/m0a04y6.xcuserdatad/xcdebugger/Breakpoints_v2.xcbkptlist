@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4C6DB4BE-E1DD-4CE9-9A2C-24753750F734"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "505E3C8E-CE9E-4227-ABE8-194C96EE42B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Feedly Notifier/FeedlyMenuController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "startAuth(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56F1F402-A454-42E6-9EC9-ADF37F09C69A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Feedly Notifier/FeedlyWebWindowController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "windowDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "56F1F402-A454-42E6-9EC9-ADF37F09C69A - af8abfb774107dd8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feedly_Notifier.FeedlyWebWindowController.windowDidLoad() -&gt; ()"
+                  moduleName = "Feedly Notifier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/m0a04y6/github/Feedly%20Notifier/Feedly%20Notifier/FeedlyWebWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "454">
+               </Location>
+               <Location
+                  uuid = "56F1F402-A454-42E6-9EC9-ADF37F09C69A - af8abfb774107dd8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feedly_Notifier.FeedlyWebWindowController.windowDidLoad() -&gt; ()"
+                  moduleName = "Feedly Notifier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/m0a04y6/github/Feedly%20Notifier/Feedly%20Notifier/FeedlyWebWindowController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "4045">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8AEE4805-2D84-4C40-ADC3-C21D77C1FA60"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Feedly Notifier/FeedlyWebWindowController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "windowDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

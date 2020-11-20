@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		55490B9C2567F9CB007CAC8B /* FeedlyMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490B9B2567F9CB007CAC8B /* FeedlyMenuController.swift */; };
+		55490B9E256800BD007CAC8B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490B9D256800BD007CAC8B /* Constants.swift */; };
+		55490BA225680A5E007CAC8B /* FeedlyWebWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BA125680A5E007CAC8B /* FeedlyWebWindowController.swift */; };
+		55490BA425680CD9007CAC8B /* FeedlyWebWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55490BA325680CD9007CAC8B /* FeedlyWebWindow.xib */; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
@@ -15,6 +18,9 @@
 
 /* Begin PBXFileReference section */
 		55490B9B2567F9CB007CAC8B /* FeedlyMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedlyMenuController.swift; sourceTree = "<group>"; };
+		55490B9D256800BD007CAC8B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		55490BA125680A5E007CAC8B /* FeedlyWebWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedlyWebWindowController.swift; sourceTree = "<group>"; };
+		55490BA325680CD9007CAC8B /* FeedlyWebWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedlyWebWindow.xib; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,13 +66,16 @@
 		55DA12802565A05C00F3A490 /* Feedly Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				55DA12852565A05E00F3A490 /* MainMenu.xib */,
+				55490BA325680CD9007CAC8B /* FeedlyWebWindow.xib */,
 				55490B9A2567F994007CAC8B /* Views */,
 				55DA12812565A05C00F3A490 /* AppDelegate.swift */,
 				55DA12832565A05E00F3A490 /* Assets.xcassets */,
-				55DA12852565A05E00F3A490 /* MainMenu.xib */,
 				55DA12882565A05E00F3A490 /* Info.plist */,
 				55DA12892565A05E00F3A490 /* Feedly_Notifier.entitlements */,
 				55490B9B2567F9CB007CAC8B /* FeedlyMenuController.swift */,
+				55490B9D256800BD007CAC8B /* Constants.swift */,
+				55490BA125680A5E007CAC8B /* FeedlyWebWindowController.swift */,
 			);
 			path = "Feedly Notifier";
 			sourceTree = "<group>";
@@ -130,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */,
+				55490BA425680CD9007CAC8B /* FeedlyWebWindow.xib in Resources */,
 				55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +153,8 @@
 			files = (
 				55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */,
 				55490B9C2567F9CB007CAC8B /* FeedlyMenuController.swift in Sources */,
+				55490BA225680A5E007CAC8B /* FeedlyWebWindowController.swift in Sources */,
+				55490B9E256800BD007CAC8B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
