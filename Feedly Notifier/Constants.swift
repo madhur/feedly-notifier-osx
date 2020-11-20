@@ -17,3 +17,9 @@ struct Constants {
     static let CODE_URL = REDIRECT_URI + "/?code="
     static let REDIRECT_URI = "http://localhost"
 }
+
+struct DefaultKeys {
+    static let ACCESS_TOKEN = "access_token"
+    static let REFRESH_TOKEN = "refresh_token"
+
+}

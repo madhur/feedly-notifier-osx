@@ -8,6 +8,7 @@
 
 import Cocoa
 import WebKit
+import Foundation
 
 class FeedlyWebWindowController: NSWindowController, WKUIDelegate, WKNavigationDelegate {
     
@@ -16,14 +17,14 @@ class FeedlyWebWindowController: NSWindowController, WKUIDelegate, WKNavigationD
     var newWebviewPopupWindow: WKWebView?
     var authCode: String?
     
+    
     override var windowNibName: String {
         return "FeedlyWebWindow"
     }
-       
-
+    
+    
     override func windowDidLoad() {
         super.windowDidLoad()
-        
         let request = URLRequest(url: self.url)
         let preferences = WKPreferences()
         preferences.javaScriptEnabled = true
@@ -49,7 +50,6 @@ class FeedlyWebWindowController: NSWindowController, WKUIDelegate, WKNavigationD
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         newWebviewPopupWindow =  WKWebView(frame: CGRect(x: (CGFloat(0)), y: (CGFloat(0)), width: (self.window?.frame.width)!, height: (self.window?.frame.height)!), configuration: configuration)
-       // newWebviewPopupWindow!.autoresizingMask = [., .flexibleHeight]
         newWebviewPopupWindow!.navigationDelegate = self
         newWebviewPopupWindow!.uiDelegate = self
         self.window?.contentView?.addSubview(newWebviewPopupWindow!)
@@ -86,7 +86,7 @@ class FeedlyWebWindowController: NSWindowController, WKUIDelegate, WKNavigationD
             "grant_type": "authorization_code",
             "code": self.authCode
         ]
-                                
+        
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         print(jsonData)
         // create post request
@@ -95,22 +95,34 @@ class FeedlyWebWindowController: NSWindowController, WKUIDelegate, WKNavigationD
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "content-type")
-
+        
         // insert json data to the request
         request.httpBody = jsonData
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
+            
+            do {
+                let decoder = JSONDecoder()
+                let tokenResponse = try decoder.decode(TokenResponse.self, from: data)
+                print(tokenResponse)
+                DefaultsUtil.defaults().save(key: DefaultKeys.ACCESS_TOKEN, value: tokenResponse.access_token)
+                DefaultsUtil.defaults().save(key: DefaultKeys.REFRESH_TOKEN, value: tokenResponse.refresh_token)
+                
+                // close the webview
+                DispatchQueue.main.async {
+                    self.window?.close()
+                }
+            }
+            catch let parsingError {
+                print("Error", parsingError)
             }
         }
-
+        
         task.resume()
     }
-
+    
 }
