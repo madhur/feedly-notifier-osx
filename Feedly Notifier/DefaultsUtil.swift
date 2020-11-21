@@ -19,7 +19,7 @@ class DefaultsUtil {
     }
     
     func save(key: String, value: String) {
-        DefaultsUtil.userDefault.set(key, forKey: value)
+        DefaultsUtil.userDefault.set(value, forKey: key)
     }
     
     func get(key: String) -> String? {

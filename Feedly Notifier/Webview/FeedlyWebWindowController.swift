@@ -111,7 +111,7 @@ class FeedlyWebWindowController: NSWindowController, WKUIDelegate, WKNavigationD
                 print(tokenResponse)
                 DefaultsUtil.defaults().save(key: DefaultKeys.ACCESS_TOKEN, value: tokenResponse.access_token)
                 DefaultsUtil.defaults().save(key: DefaultKeys.REFRESH_TOKEN, value: tokenResponse.refresh_token)
-                
+              
                 // close the webview
                 DispatchQueue.main.async {
                     self.window?.close()

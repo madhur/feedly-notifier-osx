@@ -18,23 +18,11 @@
             <items>
                 <menuItem title="Login to Feedly" id="Ghj-eZ-Ksb">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="startAuthWithSender:" target="gkh-fk-OmS" id="Lo5-Jt-cbK"/>
-                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="ORM-zD-xDG"/>
-                <menuItem title="Quit Feedly Notifier" keyEquivalent="w" id="bsf-Qx-ryp">
-                    <connections>
-                        <action selector="quitClickedWithSender:" target="gkh-fk-OmS" id="Y7j-Kw-rVX"/>
-                    </connections>
-                </menuItem>
+                <menuItem title="Quit Feedly Notifier" keyEquivalent="w" id="bsf-Qx-ryp"/>
             </items>
             <point key="canvasLocation" x="252" y="-386"/>
         </menu>
-        <customObject id="gkh-fk-OmS" userLabel="Feedly Menu Controller" customClass="FeedlyMenuController" customModule="Feedly_Notifier" customModuleProvider="target">
-            <connections>
-                <outlet property="statusMenu" destination="4vl-1R-xe5" id="4ET-Tj-AFI"/>
-            </connections>
-        </customObject>
     </objects>
 </document>

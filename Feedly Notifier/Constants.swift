@@ -14,6 +14,8 @@ struct Constants {
     static let AUTH_URL = "/v3/auth/auth?response_type=code&client_id=sandbox&scope=https://cloud.feedly.com/subscriptions&redirect_uri=" + REDIRECT_URI
     static let API_KEY = "HFoDWzLMxtSMFM3FJNgT4gdBIacC3Gm2"
     static let TOKEN_AUTH_URL = "/v3/auth/token"
+    static let CATEGORIES_URL = "/v3/categories"
+    static let PROFILE_URL = "/v3/profile"
     static let CODE_URL = REDIRECT_URI + "/?code="
     static let REDIRECT_URI = "http://localhost"
 }
