@@ -18,6 +18,8 @@
 		55490BB62568B851007CAC8B /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BB52568B851007CAC8B /* FeedApi.swift */; };
 		55490BB82568BE19007CAC8B /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BB72568BE19007CAC8B /* CategoryResponse.swift */; };
 		55490BBA2568C04E007CAC8B /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BB92568C04E007CAC8B /* ProfileResponse.swift */; };
+		55490BBC2568CFBE007CAC8B /* CountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BBB2568CFBE007CAC8B /* CountsResponse.swift */; };
+		55490BBE2568CFC7007CAC8B /* StreamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BBD2568CFC7007CAC8B /* StreamResponse.swift */; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
@@ -35,6 +37,8 @@
 		55490BB52568B851007CAC8B /* FeedApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
 		55490BB72568BE19007CAC8B /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
 		55490BB92568C04E007CAC8B /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		55490BBB2568CFBE007CAC8B /* CountsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountsResponse.swift; sourceTree = "<group>"; };
+		55490BBD2568CFC7007CAC8B /* StreamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamResponse.swift; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				55490BA825682940007CAC8B /* TokenResponse.swift */,
 				55490BB72568BE19007CAC8B /* CategoryResponse.swift */,
 				55490BB92568C04E007CAC8B /* ProfileResponse.swift */,
+				55490BBB2568CFBE007CAC8B /* CountsResponse.swift */,
+				55490BBD2568CFC7007CAC8B /* StreamResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */,
+				55490BBC2568CFBE007CAC8B /* CountsResponse.swift in Sources */,
 				55490BBA2568C04E007CAC8B /* ProfileResponse.swift in Sources */,
 				55490BB82568BE19007CAC8B /* CategoryResponse.swift in Sources */,
 				55490BB62568B851007CAC8B /* FeedApi.swift in Sources */,
@@ -214,6 +221,7 @@
 				55490BA925682940007CAC8B /* TokenResponse.swift in Sources */,
 				55490BB325684454007CAC8B /* FeedCell.swift in Sources */,
 				55490BAB25682D92007CAC8B /* DefaultsUtil.swift in Sources */,
+				55490BBE2568CFC7007CAC8B /* StreamResponse.swift in Sources */,
 				55490BAF25683E3C007CAC8B /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

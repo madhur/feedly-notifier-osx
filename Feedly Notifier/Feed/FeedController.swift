@@ -19,6 +19,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.feedApi = FeedApi()
         self.feedApi.getCategories()
         self.feedApi.getProfile()
+        self.feedApi.getUnreadCounts()
     }
     
     override var nibName : String{
