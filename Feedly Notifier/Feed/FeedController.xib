@@ -8,6 +8,13 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FeedController" customModule="Feedly_Notifier" customModuleProvider="target">
             <connections>
+                <outlet property="feedTableView" destination="gco-60-juF" id="Sk3-81-pVy"/>
+                <outlet property="feedlyWebButton" destination="Ya9-Xj-CIt" id="08f-lb-AkB"/>
+                <outlet property="lastUpdatedLabel" destination="Dlr-Gf-bq5" id="jui-3o-Q9h"/>
+                <outlet property="markAllAsReadButton" destination="1ze-OA-P6o" id="Hbp-e8-4fj"/>
+                <outlet property="progressIndicator" destination="8ZI-vo-pnj" id="SNe-f2-2T5"/>
+                <outlet property="refreshButton" destination="SCu-9e-89c" id="K9z-gS-wjU"/>
+                <outlet property="settingsButton" destination="j6T-8L-JEq" id="OCj-2x-nUw"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -17,14 +24,17 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="378"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
-                    <rect key="frame" x="232" y="181" width="16" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
+                    <rect key="frame" x="232" y="181" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="2bA-9h-NST"/>
+                        <constraint firstAttribute="width" constant="32" id="x42-Ht-miz"/>
+                    </constraints>
                 </progressIndicator>
                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-uD-n4M">
                     <rect key="frame" x="0.0" y="39" width="480" height="339"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <clipView key="contentView" ambiguous="YES" id="zYR-d1-NgY">
+                    <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="zYR-d1-NgY">
                         <rect key="frame" x="1" y="0.0" width="478" height="338"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -48,13 +58,12 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="QXP-GU-omu" userLabel="Feed Cell" customClass="FeedCell" customModule="Feedly_Notifier" customModuleProvider="target">
+                                            <tableCellView identifier="feedCellIdentifier" misplaced="YES" id="QXP-GU-omu" userLabel="Feed Cell" customClass="FeedCell" customModule="Feedly_Notifier" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="1" width="475" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-bj-QRm">
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-bj-QRm">
                                                         <rect key="frame" x="3" y="24" width="48" height="48"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="RIH-lm-S5L"/>
                                                     </imageView>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eyq-DV-qgv" userLabel="Post Title label">
@@ -66,29 +75,54 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-wT-tLv" userLabel="Post Site Label">
-                                                        <rect key="frame" x="75" y="30" width="132" height="16"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-wT-tLv" userLabel="Post Author Label">
+                                                        <rect key="frame" x="75" y="30" width="149" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Og7-lG-n94">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="font" metaFont="system" size="11"/>
+                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZj-Qq-Zxu" userLabel="Post Time Label">
-                                                        <rect key="frame" x="219" y="30" width="84" height="16"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZj-Qq-Zxu" userLabel="Post Time Label">
+                                                        <rect key="frame" x="313" y="30" width="108" height="16"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="104" id="Cx2-GM-RWh"/>
+                                                        </constraints>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Qb6-7Q-wXE">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="font" metaFont="system" size="11"/>
+                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="ljv-bj-QRm" secondAttribute="bottom" constant="24" id="1vU-MM-lzs"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="centerY" secondItem="QXP-GU-omu" secondAttribute="centerY" id="30H-ZP-qtn"/>
+                                                    <constraint firstItem="cZj-Qq-Zxu" firstAttribute="leading" secondItem="TSg-wT-tLv" secondAttribute="trailing" constant="93" id="6di-xk-h7H"/>
+                                                    <constraint firstItem="ljv-bj-QRm" firstAttribute="top" secondItem="eyq-DV-qgv" secondAttribute="top" id="M35-1P-By8"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="firstBaseline" secondItem="cZj-Qq-Zxu" secondAttribute="firstBaseline" id="P2D-n9-bwv"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="leading" secondItem="eyq-DV-qgv" secondAttribute="leading" id="PaY-OG-sp2"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="baseline" secondItem="cZj-Qq-Zxu" secondAttribute="baseline" id="V7t-Lw-6Sz"/>
+                                                    <constraint firstItem="ljv-bj-QRm" firstAttribute="leading" secondItem="QXP-GU-omu" secondAttribute="leading" constant="3" id="cDJ-fX-RlC"/>
+                                                    <constraint firstItem="ljv-bj-QRm" firstAttribute="top" secondItem="QXP-GU-omu" secondAttribute="top" constant="3" id="mPE-Yh-uhx"/>
+                                                    <constraint firstItem="eyq-DV-qgv" firstAttribute="leading" secondItem="ljv-bj-QRm" secondAttribute="trailing" constant="26" id="sDl-wM-e93"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cZj-Qq-Zxu" secondAttribute="trailing" constant="56" id="yVT-mb-aze"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="top" secondItem="eyq-DV-qgv" secondAttribute="bottom" constant="10" id="zBj-VT-qMt"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="authorLabel" destination="TSg-wT-tLv" id="jNz-wN-LG8"/>
+                                                    <outlet property="postImage" destination="ljv-bj-QRm" id="Gxm-op-E0x"/>
+                                                    <outlet property="postTime" destination="cZj-Qq-Zxu" id="czY-Pu-QM8"/>
+                                                    <outlet property="postTitle" destination="eyq-DV-qgv" id="7ER-1p-SOe"/>
+                                                </connections>
                                             </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>
                                 </tableColumns>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="1pQ-YC-fYH"/>
+                                    <outlet property="delegate" destination="-2" id="ULb-9M-IPh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                     </clipView>
@@ -105,37 +139,58 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ya9-Xj-CIt">
-                    <rect key="frame" x="8" y="8" width="28" height="23"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ya9-Xj-CIt" userLabel="Feedly WebSite Button" customClass="FeedButton" customModule="Feedly_Notifier" customModuleProvider="target">
+                    <rect key="frame" x="32" y="8" width="4" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DZe-Rj-c54">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="DZe-Rj-c54">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="feedlyWebsiteButton:" target="-2" id="LrU-c1-zNM"/>
+                    </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6T-8L-JEq">
-                    <rect key="frame" x="439" y="8" width="28" height="23"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCu-9e-89c" userLabel="Refresh Button" customClass="FeedButton" customModule="Feedly_Notifier" customModuleProvider="target">
+                    <rect key="frame" x="384" y="8" width="28" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAdvanced" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fsz-bc-aQf">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="a4M-sd-REL">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="refreshButton:" target="-2" id="Bfo-ak-Wff"/>
+                    </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCu-9e-89c">
-                    <rect key="frame" x="394" y="8" width="28" height="23"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ze-OA-P6o" userLabel="Mark All as Read Button" customClass="FeedButton" customModule="Feedly_Notifier" customModuleProvider="target">
+                    <rect key="frame" x="346" y="8" width="12" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a4M-sd-REL">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSMenuOnStateTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="NG6-lD-MhJ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="markAllAsReadButton:" target="-2" id="AEF-Hq-fs5"/>
+                    </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ze-OA-P6o">
-                    <rect key="frame" x="346" y="8" width="28" height="23"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dlr-Gf-bq5" userLabel="Last Updated Label">
+                    <rect key="frame" x="57" y="10" width="268" height="16"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="4co-5T-tU3">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6T-8L-JEq" userLabel="Settings Button" customClass="FeedButton" customModule="Feedly_Notifier" customModuleProvider="target">
+                    <rect key="frame" x="442" y="8" width="28" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSMenuOnStateTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NG6-lD-MhJ">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAdvanced" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Fsz-bc-aQf">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="settingsButton:" target="-2" id="0yS-95-hHa"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="140" y="207"/>

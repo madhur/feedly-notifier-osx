@@ -9,30 +9,35 @@
 import Foundation
 
 struct StreamResponse: Codable {
-    let continuation: String
+    let continuation: String?
     let id: String
-    let updated: Int
+    let updated: Int?
     let items: [Item]
 }
 
 struct Item : Codable {
-    let author: String
+    let author: String?
     let categories: [Category]
     let crawled: Int
     let published: Int
-    let updated: Int
+    let updated: Int?
     let unread: Bool
-    let title: String
-    let engagement: Int
-    let engagementRate: Int
-    let visual: Visual
-    let ampUrl: String
-    let cdnAmpUrl: String
-    let canonicalUrl: String
-    let webfeeds: WebFeed
-    let summary: Summary
+    let title: String?
+    let engagement: Int?
+    let engagementRate: Int?
+    let visual: Visual?
+    let ampUrl: String?
+    let cdnAmpUrl: String?
+    let canonicalUrl: String?
+    let webfeeds: WebFeed?
+    let summary: Summary?
+    let alternate: [Alternate]?
 }
 
+struct Alternate: Codable {
+    let href: String
+    let type: String
+}
 struct Category: Codable {
     let id: String
     let label: String
@@ -47,8 +52,8 @@ struct WebFeed: Codable {
     let logo: String
 }
 struct Visual: Codable {
-    let contentType: String
-    let height: Int
-    let url: String
-    let width: Int
+    let contentType: String?
+    let height: Int?
+    let url: String?
+    let width: Int?
 }
