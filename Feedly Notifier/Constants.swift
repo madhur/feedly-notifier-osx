@@ -31,6 +31,10 @@ struct Constants {
     static let REDIRECT_URI = "http://localhost"
     static let PAGE_SIZE = 20
     
+    static let TWITTER_URL = "https://twitter.com/madhur25"
+       static let GIT_URL = "https://github.com/madhur/feedly-notifier-osx"
+       static let HOME_URL = "http://madhur.co.in"
+    
 }
 
 struct DefaultKeys {
@@ -43,4 +47,5 @@ struct DefaultKeys {
 
 struct Ranking {
     static let ENGAGEMENT = "engagement"
+    static let NEWEST = "newest"
 }

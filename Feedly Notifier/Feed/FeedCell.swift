@@ -23,7 +23,7 @@ class FeedCell: NSTableCellView {
     
     class func view(_ tableView: NSTableView, owner: AnyObject?, subject: Item) -> NSView {
         let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "feedCellIdentifier"), owner: owner) as! FeedCell
-        view.authorLabel.stringValue = subject.author ?? "Uknown Author"
+        view.authorLabel.stringValue = subject.origin?.title ?? "Uknown Author"
         view.postTitle.stringValue = subject.title ?? "Uknown Title"
         view.postTime.stringValue = getStringTimeFromPost(item: subject)
         if let imageUrl = subject.visual?.url {
@@ -33,7 +33,7 @@ class FeedCell: NSTableCellView {
      }
     
     class func getStringTimeFromPost(item: Item) -> String {
-        let interval = TimeInterval.init(exactly: item.published / 1000) ?? TimeInterval.init()
+        let interval = TimeInterval.init(exactly: item.crawled / 1000) ?? TimeInterval.init()
         return Date.init(timeIntervalSince1970:interval).timeAgoShort()
     }
 }

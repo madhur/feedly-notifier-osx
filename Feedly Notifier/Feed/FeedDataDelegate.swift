@@ -13,4 +13,6 @@ protocol FeedDataDelegate : class {
     func feedDataUpdated(streamResponse: StreamResponse)
     
     func feedDataMarkedRead()
+    
+    func updateCounts(countsResponse: CountsResponse)
 }

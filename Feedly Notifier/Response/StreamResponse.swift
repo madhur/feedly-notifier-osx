@@ -16,6 +16,7 @@ struct StreamResponse: Codable {
 }
 
 struct Item : Codable {
+    let id: String
     let author: String?
     let categories: [Category]
     let crawled: Int
@@ -32,6 +33,13 @@ struct Item : Codable {
     let webfeeds: WebFeed?
     let summary: Summary?
     let alternate: [Alternate]?
+    let origin: Origin?
+}
+
+struct Origin: Codable {
+    let htmlUrl: String
+    let streamId: String
+    let title: String
 }
 
 struct Alternate: Codable {

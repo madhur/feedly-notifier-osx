@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, FeedDataDelegate{
+class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, FeedDataDelegate {
     
     var feedApi: FeedApi!
     
@@ -26,13 +26,15 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     var lastUpdatedDate : Date?
     var streamResponse: StreamResponse?
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         print("Feed controller loaded")
         self.feedApi = FeedApi(feedDataDelegate: self)
-        self.feedApi.getCategories()
-        self.feedApi.getProfile()
+       // self.feedApi.getCategories()
+       // self.feedApi.getProfile()
         self.feedApi.getUnreadCounts()
         getStream()
        
@@ -48,14 +50,22 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     // MARK: button methods
     @IBAction func feedlyWebsiteButton(_ sender: NSButton) {
+        let url = URL(string:"https://www.feedly.com")!
+        NSWorkspace.shared.open(url)
     }
     
     @IBAction func markAllAsReadButton(_ sender: NSButton) {
+        var entryIds:[String] = []
+        for entry in streamResponse?.items ?? [] {
+            entryIds.append(entry.id)
+        }
+        if (entryIds.count > 0) {
+            feedApi.markRead(entries: entryIds)
+        }
     }
     
     @IBAction func refreshButton(_ sender: NSButton) {
-        getStream()
-         self.progressIndicator.isHidden = false
+        refreshFeed()
     }
     
     @IBAction func settingsButton(_ sender: NSButton) {
@@ -97,6 +107,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         if let url = streamResponse?.items[row].alternate?.first?.href {
             let url = URL(string:url)!
             NSWorkspace.shared.open(url)
+            feedApi.markRead(entries: [(streamResponse?.items[row].id)!])
               let delegate = NSApplication.shared.delegate as! AppDelegate
             delegate.closePopover(sender: self)
         }
@@ -119,12 +130,32 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
     }
     
+    func updateCounts(countsResponse: CountsResponse) {
+        var count: Int = 0
+        for entry in countsResponse.unreadcounts {
+            count = count + entry.count
+        }
+        updateIconText(count: count)
+    }
+
+    
     func feedDataMarkedRead() {
-        
+       refreshFeed()
+    }
+    
+    func refreshFeed() {
+        getStream()
+        self.progressIndicator.isHidden = false
     }
     
     func getStream() {
-         self.feedApi.getStream(ranked: "ranked", pageSize: 20)
+        self.feedApi.getStream(ranked: Ranking.NEWEST, pageSize: 20)
+        self.feedApi.getUnreadCounts()
+    }
+    
+    func updateIconText(count: Int) {
+         let delegate = NSApplication.shared.delegate as! AppDelegate
+        delegate.setIconText(text: String(count))
     }
     
     

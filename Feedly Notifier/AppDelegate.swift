@@ -17,13 +17,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var feedlyWebWindowController: FeedlyWebWindowController!
     var feedController: FeedController!
     var popover: NSPopover!
-    
+    var aboutWindowController: AboutWindowController?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         // Do not display on dock
         NSApp.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
-        statusItem.title = "madhur"
+       
         if  DefaultsUtil.defaults().get(key: DefaultKeys.ACCESS_TOKEN) != nil {
             self.popover = NSPopover()
             self.feedController = FeedController()
@@ -36,6 +36,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if let button = self.statusItem.button {
+          
+            button.image = NSImage(named: "StatusBarIcon")
+            button.imagePosition = .imageLeft
             //button.image = NSImage(named: NSImage.Name("ExampleMenuBarIcon"))
             button.action = #selector(togglePopover(_:))
         }
@@ -76,7 +79,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func openAboutLink() {
-        
+        self.aboutWindowController = AboutWindowController()
+        aboutWindowController?.showWindow(self)
     }
     
     @objc  
@@ -86,6 +90,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func quit() {
         NSApplication.shared.terminate(self)
+    }
+    
+    @objc func setIconText(text: String) {
+          if let button = self.statusItem.button {
+                  
+            button.title = text
+        }
     }
 }
 

@@ -45,6 +45,9 @@ struct FeedApi {
             }
             do {
                 let res = try JSONDecoder().decode(CountsResponse.self, from: data)
+                DispatchQueue.main.async {
+                    self.feedDataDelegate?.updateCounts(countsResponse: res)
+                }
                 // print(res)
             } catch let error {
                 print(error)
@@ -57,7 +60,7 @@ struct FeedApi {
     func markRead(entries: [String]) {
         let json: [String: Any] = [
             "action": "markAsRead",
-            "type": "enties",
+            "type": "entries",
             "entryIds": entries
         ]
         
@@ -68,7 +71,10 @@ struct FeedApi {
                 return
             }
             do {
-                
+                DispatchQueue.main.async {
+                    self.feedDataDelegate?.feedDataMarkedRead()
+                }
+                print("marked unread")
             } catch let error {
                 print(error)
             }

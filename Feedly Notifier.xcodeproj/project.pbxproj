@@ -24,6 +24,8 @@
 		55490BC3256BD2A0007CAC8B /* FeedDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BC2256BD2A0007CAC8B /* FeedDataDelegate.swift */; };
 		55490BC5256BECD5007CAC8B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BC4256BECD5007CAC8B /* Utils.swift */; };
 		55490BC7256C06EA007CAC8B /* SettingsMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55490BC6256C06EA007CAC8B /* SettingsMenu.xib */; };
+		55490BC9256C25A8007CAC8B /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55490BC8256C25A8007CAC8B /* AboutWindow.xib */; };
+		55490BCB256C2609007CAC8B /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BCA256C2609007CAC8B /* AboutWindowController.swift */; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
@@ -47,6 +49,8 @@
 		55490BC2256BD2A0007CAC8B /* FeedDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataDelegate.swift; sourceTree = "<group>"; };
 		55490BC4256BECD5007CAC8B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		55490BC6256C06EA007CAC8B /* SettingsMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsMenu.xib; sourceTree = "<group>"; };
+		55490BC8256C25A8007CAC8B /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
+		55490BCA256C2609007CAC8B /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		55490BA6256828E1007CAC8B /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				55490BCA256C2609007CAC8B /* AboutWindowController.swift */,
+				55490BC8256C25A8007CAC8B /* AboutWindow.xib */,
 				55490BC6256C06EA007CAC8B /* SettingsMenu.xib */,
 			);
 			path = Preferences;
@@ -220,6 +226,7 @@
 				55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */,
 				55490BA425680CD9007CAC8B /* FeedlyWebWindow.xib in Resources */,
 				55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */,
+				55490BC9256C25A8007CAC8B /* AboutWindow.xib in Resources */,
 				55490BC7256C06EA007CAC8B /* SettingsMenu.xib in Resources */,
 				55490BB025683E3C007CAC8B /* FeedController.xib in Resources */,
 			);
@@ -245,6 +252,7 @@
 				55490BA925682940007CAC8B /* TokenResponse.swift in Sources */,
 				55490BB325684454007CAC8B /* FeedCell.swift in Sources */,
 				55490BAB25682D92007CAC8B /* DefaultsUtil.swift in Sources */,
+				55490BCB256C2609007CAC8B /* AboutWindowController.swift in Sources */,
 				55490BBE2568CFC7007CAC8B /* StreamResponse.swift in Sources */,
 				55490BAF25683E3C007CAC8B /* FeedController.swift in Sources */,
 			);
