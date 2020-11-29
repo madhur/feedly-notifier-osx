@@ -96,6 +96,13 @@ struct FeedApi {
             }
             do {
                 print ("Madhur")
+                 if let httpResponse = response as? HTTPURLResponse {
+                       print("statusCode: \(httpResponse.statusCode)")
+                    if httpResponse.statusCode == 401 {
+                        self.refreshToken()
+                        return
+                    }
+                }
                 let data1 =  try JSONSerialization.jsonObject(with: data, options: []) // first of all convert json
                 
                 print(data1) // <-- here is ur string
@@ -109,10 +116,76 @@ struct FeedApi {
                 
             } catch let error {
                 print(error)
+               
             }
             
         }.resume()
+    
+    }
+    
+    func refreshToken() {
+        let refreshToken = DefaultsUtil.defaults().get(key: DefaultKeys.REFRESH_TOKEN)
         
+        let json: [String: Any] = [
+            "client_id": Constants.CLIENT_ID,
+                   "client_secret": Constants.API_KEY,
+                   "refresh_token" : refreshToken,
+                   "grant_type": "refresh_token"
+                  
+               ]
+               
+               let jsonData = try? JSONSerialization.data(withJSONObject: json)
+               print(jsonData)
+               // create post request
+               let url = URL(string: Constants.FEEDLY_HOST + Constants.TOKEN_AUTH_URL)!
+               print(url.absoluteString)
+               var request = URLRequest(url: url)
+               request.httpMethod = "POST"
+               request.addValue("application/json", forHTTPHeaderField: "content-type")
+               
+               // insert json data to the request
+               request.httpBody = jsonData
+               
+               let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                   guard let data = data, error == nil else {
+                       print(error?.localizedDescription ?? "No data")
+                       return
+                   }
+                   
+                   do {
+                      self.printResponse(data: data)
+                       if let httpResponse = response as? HTTPURLResponse {
+                              print("statusCode: \(httpResponse.statusCode)")
+                           if httpResponse.statusCode == 401 {
+                              
+                               return
+                           }
+                       }
+                       
+                       let decoder = JSONDecoder()
+                       let tokenResponse = try decoder.decode(RefreshTokenResponse.self, from: data)
+                       print(tokenResponse)
+                       DefaultsUtil.defaults().save(key: DefaultKeys.ACCESS_TOKEN, value: tokenResponse.access_token)
+                       self.feedDataDelegate?.tokenRefreshed()
+                      
+                   }
+                   catch let parsingError {
+                       print("Error", parsingError)
+                   }
+               }
+               
+               task.resume()
+    }
+    
+    func printResponse(data: Data) {
+        do {
+            let data1 =   try JSONSerialization.jsonObject(with: data, options: []) // first of all convert json
+            print(data1) // <-- here is ur string
+        }
+        catch let error {
+                     print(error)
+                    
+        }
     }
     
     func getProfile() {

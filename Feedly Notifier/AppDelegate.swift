@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var feedController: FeedController!
     var popover: NSPopover!
     var aboutWindowController: AboutWindowController?
+    var preferencesWindowController: PreferencesWindowController = PreferencesWindowController()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -85,7 +86,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc  
     func showSettings() {
-        
+        self.preferencesWindowController = PreferencesWindowController()
+        self.preferencesWindowController.viewControllers = [ GeneralPreferencesViewController(nibName: "GeneralPreferences", bundle: nil), AdvancedPreferencesViewController(nibName: "AdvancedPreferences", bundle: nil) ]
+
+              self.preferencesWindowController.showPreferencesWindow()
+        self.preferencesWindowController.showWindow(self)
     }
     
     @objc func quit() {

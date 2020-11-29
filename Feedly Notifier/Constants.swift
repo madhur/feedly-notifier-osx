@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    
+    static let CLIENT_ID  = "sandbox"
     static let FEEDLY_HOST = "https://sandbox7.feedly.com"
     static let AUTH_URL = "/v3/auth/auth?response_type=code&client_id=sandbox&scope=https://cloud.feedly.com/subscriptions&redirect_uri=" + REDIRECT_URI
     static let API_KEY = "HFoDWzLMxtSMFM3FJNgT4gdBIacC3Gm2"
@@ -32,8 +32,8 @@ struct Constants {
     static let PAGE_SIZE = 20
     
     static let TWITTER_URL = "https://twitter.com/madhur25"
-       static let GIT_URL = "https://github.com/madhur/feedly-notifier-osx"
-       static let HOME_URL = "http://madhur.co.in"
+    static let GIT_URL = "https://github.com/madhur/feedly-notifier-osx"
+    static let HOME_URL = "http://madhur.co.in"
     
 }
 

@@ -80,7 +80,7 @@ class FeedlyWebWindowController: NSWindowController, WKUIDelegate, WKNavigationD
         // prepare json data
         // ?client_id=sandbox&client_secret=" + API_KEY + "&redirect_uri=http://localhost&grant_type=authorization_code&code=
         let json: [String: Any] = [
-            "client_id": "sandbox",
+            "client_id": Constants.CLIENT_ID,
             "client_secret": Constants.API_KEY,
             "redirect_uri" : Constants.REDIRECT_URI,
             "grant_type": "authorization_code",

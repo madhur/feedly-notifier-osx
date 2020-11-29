@@ -15,4 +15,6 @@ protocol FeedDataDelegate : class {
     func feedDataMarkedRead()
     
     func updateCounts(countsResponse: CountsResponse)
+    
+    func tokenRefreshed()
 }

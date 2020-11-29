@@ -26,6 +26,14 @@
 		55490BC7256C06EA007CAC8B /* SettingsMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55490BC6256C06EA007CAC8B /* SettingsMenu.xib */; };
 		55490BC9256C25A8007CAC8B /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55490BC8256C25A8007CAC8B /* AboutWindow.xib */; };
 		55490BCB256C2609007CAC8B /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BCA256C2609007CAC8B /* AboutWindowController.swift */; };
+		55490BCD256E1063007CAC8B /* GeneralPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55490BCC256E1063007CAC8B /* GeneralPreferences.xib */; };
+		55490BCF256E1094007CAC8B /* AdvancedPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55490BCE256E1094007CAC8B /* AdvancedPreferences.xib */; };
+		55490BD1256E14F0007CAC8B /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD0256E14F0007CAC8B /* GeneralPreferencesViewController.swift */; };
+		55490BD3256E1594007CAC8B /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD2256E1594007CAC8B /* AdvancedPreferencesViewController.swift */; };
+		55490BD5256E1946007CAC8B /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD4256E1946007CAC8B /* PreferencesWindowController.swift */; };
+		55490BD7256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD6256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift */; };
+		55490BD92573F682007CAC8B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD82573F682007CAC8B /* ErrorResponse.swift */; };
+		55490BDB2573F8C9007CAC8B /* RefreshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BDA2573F8C9007CAC8B /* RefreshTokenResponse.swift */; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
@@ -51,6 +59,14 @@
 		55490BC6256C06EA007CAC8B /* SettingsMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsMenu.xib; sourceTree = "<group>"; };
 		55490BC8256C25A8007CAC8B /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
 		55490BCA256C2609007CAC8B /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		55490BCC256E1063007CAC8B /* GeneralPreferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPreferences.xib; sourceTree = "<group>"; };
+		55490BCE256E1094007CAC8B /* AdvancedPreferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedPreferences.xib; sourceTree = "<group>"; };
+		55490BD0256E14F0007CAC8B /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
+		55490BD2256E1594007CAC8B /* AdvancedPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferencesViewController.swift; sourceTree = "<group>"; };
+		55490BD4256E1946007CAC8B /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		55490BD6256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowControllerProtocol.swift; sourceTree = "<group>"; };
+		55490BD82573F682007CAC8B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		55490BDA2573F8C9007CAC8B /* RefreshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenResponse.swift; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +101,12 @@
 				55490BCA256C2609007CAC8B /* AboutWindowController.swift */,
 				55490BC8256C25A8007CAC8B /* AboutWindow.xib */,
 				55490BC6256C06EA007CAC8B /* SettingsMenu.xib */,
+				55490BCC256E1063007CAC8B /* GeneralPreferences.xib */,
+				55490BCE256E1094007CAC8B /* AdvancedPreferences.xib */,
+				55490BD0256E14F0007CAC8B /* GeneralPreferencesViewController.swift */,
+				55490BD2256E1594007CAC8B /* AdvancedPreferencesViewController.swift */,
+				55490BD4256E1946007CAC8B /* PreferencesWindowController.swift */,
+				55490BD6256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -97,6 +119,8 @@
 				55490BB92568C04E007CAC8B /* ProfileResponse.swift */,
 				55490BBB2568CFBE007CAC8B /* CountsResponse.swift */,
 				55490BBD2568CFC7007CAC8B /* StreamResponse.swift */,
+				55490BD82573F682007CAC8B /* ErrorResponse.swift */,
+				55490BDA2573F8C9007CAC8B /* RefreshTokenResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -223,6 +247,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55490BCF256E1094007CAC8B /* AdvancedPreferences.xib in Resources */,
+				55490BCD256E1063007CAC8B /* GeneralPreferences.xib in Resources */,
 				55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */,
 				55490BA425680CD9007CAC8B /* FeedlyWebWindow.xib in Resources */,
 				55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */,
@@ -241,14 +267,20 @@
 			files = (
 				55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */,
 				55490BC1256BCC88007CAC8B /* FeedButton.swift in Sources */,
+				55490BD7256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift in Sources */,
 				55490BBC2568CFBE007CAC8B /* CountsResponse.swift in Sources */,
+				55490BD1256E14F0007CAC8B /* GeneralPreferencesViewController.swift in Sources */,
 				55490BBA2568C04E007CAC8B /* ProfileResponse.swift in Sources */,
+				55490BD92573F682007CAC8B /* ErrorResponse.swift in Sources */,
 				55490BC3256BD2A0007CAC8B /* FeedDataDelegate.swift in Sources */,
+				55490BD5256E1946007CAC8B /* PreferencesWindowController.swift in Sources */,
 				55490BC5256BECD5007CAC8B /* Utils.swift in Sources */,
 				55490BB82568BE19007CAC8B /* CategoryResponse.swift in Sources */,
 				55490BB62568B851007CAC8B /* FeedApi.swift in Sources */,
 				55490BA225680A5E007CAC8B /* FeedlyWebWindowController.swift in Sources */,
 				55490B9E256800BD007CAC8B /* Constants.swift in Sources */,
+				55490BDB2573F8C9007CAC8B /* RefreshTokenResponse.swift in Sources */,
+				55490BD3256E1594007CAC8B /* AdvancedPreferencesViewController.swift in Sources */,
 				55490BA925682940007CAC8B /* TokenResponse.swift in Sources */,
 				55490BB325684454007CAC8B /* FeedCell.swift in Sources */,
 				55490BAB25682D92007CAC8B /* DefaultsUtil.swift in Sources */,

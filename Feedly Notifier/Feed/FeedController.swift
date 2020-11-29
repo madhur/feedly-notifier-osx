@@ -9,7 +9,6 @@
 import Cocoa
 
 class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, FeedDataDelegate {
-    
     var feedApi: FeedApi!
     
     @IBOutlet weak var feedlyWebButton: NSButton!
@@ -128,6 +127,10 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.lastUpdatedLabel.stringValue = lastUpdatedDate?.timeAgoSinceDate() ?? ""
         self.progressIndicator.isHidden = true
         
+    }
+    
+    func tokenRefreshed() {
+        refreshFeed()
     }
     
     func updateCounts(countsResponse: CountsResponse) {
