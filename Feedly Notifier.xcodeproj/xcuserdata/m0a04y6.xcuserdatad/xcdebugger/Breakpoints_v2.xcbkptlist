@@ -222,8 +222,8 @@
             filePath = "Feedly Notifier/Feed/FeedController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "FeedController"
             landmarkType = "3">
          </BreakpointContent>

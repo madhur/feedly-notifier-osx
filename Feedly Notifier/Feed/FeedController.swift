@@ -98,11 +98,15 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         return true
     }
     
+    
     func tableViewSelectionDidChange(_ notification: Notification) {
         guard let table = notification.object as? NSTableView else {
                    return
                }
                let row = table.selectedRow
+        if row == -1 {
+            return
+        }
         if let url = streamResponse?.items[row].alternate?.first?.href {
             let url = URL(string:url)!
             NSWorkspace.shared.open(url)
@@ -130,6 +134,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
     }
     
+ 
     func tokenRefreshed() {
         refreshFeed()
     }
