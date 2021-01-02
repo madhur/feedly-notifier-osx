@@ -40,7 +40,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
     
     override func viewWillAppear() {
-        self.lastUpdatedLabel.stringValue = lastUpdatedDate?.timeAgoSinceDate() ?? ""
+       updateLastUpdatedLabel()
     }
     
     override var nibName : String {
@@ -49,7 +49,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     // MARK: button methods
     @IBAction func feedlyWebsiteButton(_ sender: NSButton) {
-        let url = URL(string:"https://www.feedly.com")!
+        let url = URL(string: Constants.FEEDLY_WEB)!
         NSWorkspace.shared.open(url)
     }
     
@@ -71,12 +71,12 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         let delegate = NSApplication.shared.delegate as! AppDelegate
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "About", action: #selector(delegate.openAboutLink), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: Constants.ABOUT, action: #selector(delegate.openAboutLink), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         
-        menu.addItem(NSMenuItem(title: "Settings", action: #selector(delegate.showSettings), keyEquivalent: "s"))
+        menu.addItem(NSMenuItem(title: Constants.SETTINGS, action: #selector(delegate.showSettings), keyEquivalent: "s"))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(delegate.quit), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: Constants.QUIT, action: #selector(delegate.quit), keyEquivalent: "q"))
         NSMenu.popUpContextMenu(menu, with: NSApp.currentEvent!, for: sender)
     }
     // MARK: Table data source methods
@@ -124,7 +124,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.streamResponse = streamResponse
         self.feedTableView.reloadData()
         self.lastUpdatedDate = Date.init()
-        self.lastUpdatedLabel.stringValue = lastUpdatedDate?.timeAgoSinceDate() ?? ""
+        updateLastUpdatedLabel()
         self.progressIndicator.isHidden = true
         
     }
@@ -133,11 +133,23 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         refreshFeed()
     }
     
+    func updateLastUpdatedLabel() {
+        if let updated = lastUpdatedDate?.timeAgoSinceDate() {
+                    self.lastUpdatedLabel.stringValue = "Last Updated: \(updated)"
+               }
+               else {
+                   self.lastUpdatedLabel.stringValue = ""
+               }
+    }
+    
     func updateCounts(countsResponse: CountsResponse) {
         var count: Int = 0
+        var index: Int = 0
         for entry in countsResponse.unreadcounts {
             count = count + entry.count
+            index = index + 1
         }
+        print("Processed counts: " + String(index))
         updateIconText(count: count)
     }
 

@@ -35,17 +35,47 @@ struct Constants {
     static let GIT_URL = "https://github.com/madhur/feedly-notifier-osx"
     static let HOME_URL = "http://madhur.co.in"
     
+    // UI Constants
+    static let LAST_UPDATED = "Last Updated: "
+    static let FEEDLY_WEB = "https://www.feedly.com"
+    static let SETTINGS = "Settings"
+    static let ABOUT = "About"
+    static let QUIT = "Quit"
+    static let UNKNOWN_TITLE = "Unknown Title"
+    static let UNKNOWN_AUTHOR = "Unknown Author"
+
 }
 
 struct DefaultKeys {
+    // MARK: implicit preferences
     static let ACCESS_TOKEN = "access_token"
     static let REFRESH_TOKEN = "refresh_token"
-    static let RANKING_PREFERENCE = "ranking"
-    static let SELECTED_CATEGORIES = "categories"
     static let USER_ID = "user_id"
+    static let USER_NAME = "user_name"
+    static let USER_EMAIL = "user_email"
+    // MARK : general preferences
+    static let START_STARTUP = "start_startup"
+    static let SHOW_COUNTS = "show_counts"
+    static let MARK_READ_OPEN = "mark_read_open"
+    static let SORTING_METHOD = "ranking"
+    static let SHOW_SITE_ICON = "show_site_icon"
+    static let SELECTED_CATEGORIES = "selected_categories"
+    static let CATEGORIES_LIST = "categories_list"
+}
+
+struct DefaultValues {
+    // MARK : general preferences  values
+    static let START_STARTUP = false
+    static let SHOW_COUNTS = true
+    static let MARK_READ_OPEN = true
+    static let SORTING_METHOD = "newest"
+    static let SHOW_SITE_ICON = true
+    static let SELECTED_CATEGORIES = false
+    static let CATEGORIES_LIST = "categories_list"
 }
 
 struct Ranking {
     static let ENGAGEMENT = "engagement"
     static let NEWEST = "newest"
+    static let OLDEST = "oldest"
 }

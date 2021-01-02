@@ -48,7 +48,7 @@ struct FeedApi {
                 DispatchQueue.main.async {
                     self.feedDataDelegate?.updateCounts(countsResponse: res)
                 }
-                // print(res)
+                 print(res)
             } catch let error {
                 print(error)
             }

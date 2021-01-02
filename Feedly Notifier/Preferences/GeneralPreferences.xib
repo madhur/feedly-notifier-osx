@@ -8,6 +8,13 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferencesViewController" customModule="Feedly_Notifier" customModuleProvider="target">
             <connections>
+                <outlet property="categoriesTableView" destination="kl0-2F-HDB" id="hxN-4i-jXd"/>
+                <outlet property="markAsReadCheckBox" destination="OBO-gE-MNa" id="eIf-Qe-1tI"/>
+                <outlet property="showCountsCheckBox" destination="jTD-TD-sWM" id="Ueo-Jo-K5h"/>
+                <outlet property="showFavIconCheckBox" destination="D3D-FW-zaU" id="6Dh-Sc-PWO"/>
+                <outlet property="sortingMethodComboBox" destination="3c9-hR-imm" id="tCq-w3-QcH"/>
+                <outlet property="startupCheckBox" destination="J7a-WZ-IYD" id="efR-bQ-ye3"/>
+                <outlet property="updateCategoriesCheckBox" destination="M0K-Ir-gha" id="2TR-jn-sG6"/>
                 <outlet property="view" destination="XMs-Mk-uNi" id="B0G-V2-otX"/>
             </connections>
         </customObject>
@@ -24,6 +31,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="showCountsClicked:" target="-2" id="dAh-eA-sQ6"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OBO-gE-MNa">
                     <rect key="frame" x="169" y="526" width="285" height="30"/>
@@ -32,6 +42,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="markAsReadClicked:" target="-2" id="LKZ-SJ-Rvn"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3D-FW-zaU">
                     <rect key="frame" x="169" y="435" width="285" height="30"/>
@@ -40,22 +53,31 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="showFavIconClicked:" target="-2" id="QKU-NX-KaA"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M0K-Ir-gha">
                     <rect key="frame" x="169" y="397" width="285" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Update only following categories" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Cdd-IV-bgL">
+                    <buttonCell key="cell" type="check" title="Update only following categories" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Cdd-IV-bgL">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="updateCategoriesClicked:" target="-2" id="n9S-QW-eln"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7a-WZ-IYD">
                     <rect key="frame" x="169" y="590" width="285" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Start Feed Notifier at Startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Stl-Tv-Bln">
+                    <buttonCell key="cell" type="check" title="Start Feed Notifier at Startup" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Stl-Tv-Bln">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="startupClicked:" target="-2" id="3cq-rJ-iLt"/>
+                    </connections>
                 </button>
                 <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-hR-imm">
                     <rect key="frame" x="171" y="481" width="212" height="25"/>
@@ -70,6 +92,9 @@
                             <string>Item</string>
                         </objectValues>
                     </comboBoxCell>
+                    <connections>
+                        <action selector="sortingMethodChanged:" target="-2" id="QMi-wa-vTC"/>
+                    </connections>
                 </comboBox>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Tb-6i-Ubw">
                     <rect key="frame" x="20" y="492" width="118" height="16"/>
@@ -152,6 +177,10 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
                                 </tableColumns>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="1l3-aj-JVq"/>
+                                    <outlet property="delegate" destination="-2" id="Vch-Hr-TtF"/>
+                                </connections>
                             </tableView>
                         </subviews>
                     </clipView>

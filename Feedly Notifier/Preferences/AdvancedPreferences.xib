@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AdvancedPreferencesViewController" customModule="Feedly_Notifier" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="sct-pj-d2d" id="e3P-tB-8I6"/>
+                <outlet property="userNameTextField" destination="0dt-ha-Mdf" id="h6g-Ml-KQJ"/>
                 <outlet property="view" destination="c22-O7-iKe" id="tDi-db-iL9"/>
             </connections>
         </customObject>
@@ -42,6 +44,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="logoutAction:" target="-2" id="h02-HS-JTs"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0dt-ha-Mdf">
                     <rect key="frame" x="154" y="166" width="79" height="16"/>

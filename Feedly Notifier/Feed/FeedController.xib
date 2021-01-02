@@ -24,21 +24,27 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="378"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
-                    <rect key="frame" x="232" y="181" width="32" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="32" id="2bA-9h-NST"/>
-                        <constraint firstAttribute="width" constant="32" id="x42-Ht-miz"/>
-                    </constraints>
-                </progressIndicator>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-4i-VIT" userLabel="LoadingView">
+                    <rect key="frame" x="158" y="141" width="163" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
+                            <rect key="frame" x="65" y="32" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="2bA-9h-NST"/>
+                                <constraint firstAttribute="width" constant="32" id="x42-Ht-miz"/>
+                            </constraints>
+                        </progressIndicator>
+                    </subviews>
+                </customView>
                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-uD-n4M">
                     <rect key="frame" x="0.0" y="39" width="480" height="339"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="zYR-d1-NgY">
+                    <clipView key="contentView" copiesOnScroll="NO" id="zYR-d1-NgY">
                         <rect key="frame" x="1" y="0.0" width="478" height="338"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" headerView="1mg-L5-lo2" viewBased="YES" id="gco-60-juF" userLabel="Feed Table View">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" headerView="1mg-L5-lo2" viewBased="YES" id="gco-60-juF" userLabel="Feed Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="478" height="313"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
@@ -78,7 +84,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-wT-tLv" userLabel="Post Author Label">
                                                         <rect key="frame" x="75" y="30" width="149" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Label" id="Og7-lG-n94">
-                                                            <font key="font" metaFont="system" size="11"/>
+                                                            <font key="font" metaFont="smallSystem"/>
                                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -89,7 +95,7 @@
                                                             <constraint firstAttribute="width" constant="104" id="Cx2-GM-RWh"/>
                                                         </constraints>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Label" id="Qb6-7Q-wXE">
-                                                            <font key="font" metaFont="system" size="11"/>
+                                                            <font key="font" metaFont="smallSystem"/>
                                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>

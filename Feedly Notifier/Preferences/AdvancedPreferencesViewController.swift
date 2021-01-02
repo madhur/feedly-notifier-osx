@@ -10,6 +10,13 @@ import Foundation
 import Cocoa
 
 class AdvancedPreferencesViewController: NSViewController, PreferencesWindowControllerProtocol {
+    @IBOutlet weak var userNameTextField: NSTextField!
+    @IBOutlet weak var emailTextField: NSTextField!
+    
+    @IBAction func logoutAction(_ sender: Any) {
+        
+    }
+    
     func preferencesIdentifier() -> String {
         return "AdvancedPreferences"
     }

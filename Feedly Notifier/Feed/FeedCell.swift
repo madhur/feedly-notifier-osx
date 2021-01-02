@@ -23,8 +23,8 @@ class FeedCell: NSTableCellView {
     
     class func view(_ tableView: NSTableView, owner: AnyObject?, subject: Item) -> NSView {
         let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "feedCellIdentifier"), owner: owner) as! FeedCell
-        view.authorLabel.stringValue = subject.origin?.title ?? "Uknown Author"
-        view.postTitle.stringValue = subject.title ?? "Uknown Title"
+        view.authorLabel.stringValue = subject.origin?.title ?? Constants.UNKNOWN_AUTHOR
+        view.postTitle.stringValue = subject.title ?? Constants.UNKNOWN_TITLE
         view.postTime.stringValue = getStringTimeFromPost(item: subject)
         if let imageUrl = subject.visual?.url {
             view.postImage.image = NSImage(byReferencing: URL(string: imageUrl)!)

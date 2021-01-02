@@ -34,6 +34,7 @@
 		55490BD7256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD6256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift */; };
 		55490BD92573F682007CAC8B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD82573F682007CAC8B /* ErrorResponse.swift */; };
 		55490BDB2573F8C9007CAC8B /* RefreshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BDA2573F8C9007CAC8B /* RefreshTokenResponse.swift */; };
+		55C09D1825A0CD3300CDC3FE /* FeedLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D1725A0CD3300CDC3FE /* FeedLoadingView.swift */; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
@@ -67,6 +68,7 @@
 		55490BD6256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowControllerProtocol.swift; sourceTree = "<group>"; };
 		55490BD82573F682007CAC8B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		55490BDA2573F8C9007CAC8B /* RefreshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenResponse.swift; sourceTree = "<group>"; };
+		55C09D1725A0CD3300CDC3FE /* FeedLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingView.swift; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		55490BA6256828E1007CAC8B /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				55490BAA25682D92007CAC8B /* DefaultsUtil.swift */,
 				55490BCA256C2609007CAC8B /* AboutWindowController.swift */,
 				55490BC8256C25A8007CAC8B /* AboutWindow.xib */,
 				55490BC6256C06EA007CAC8B /* SettingsMenu.xib */,
@@ -132,6 +135,7 @@
 				55490BAE25683E3C007CAC8B /* FeedController.xib */,
 				55490BB225684454007CAC8B /* FeedCell.swift */,
 				55490BC2256BD2A0007CAC8B /* FeedDataDelegate.swift */,
+				55C09D1725A0CD3300CDC3FE /* FeedLoadingView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -184,7 +188,6 @@
 				55DA12882565A05E00F3A490 /* Info.plist */,
 				55DA12892565A05E00F3A490 /* Feedly_Notifier.entitlements */,
 				55490B9D256800BD007CAC8B /* Constants.swift */,
-				55490BAA25682D92007CAC8B /* DefaultsUtil.swift */,
 			);
 			path = "Feedly Notifier";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				55490BCB256C2609007CAC8B /* AboutWindowController.swift in Sources */,
 				55490BBE2568CFC7007CAC8B /* StreamResponse.swift in Sources */,
 				55490BAF25683E3C007CAC8B /* FeedController.swift in Sources */,
+				55C09D1825A0CD3300CDC3FE /* FeedLoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

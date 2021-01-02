@@ -86,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc  
     func showSettings() {
-        self.preferencesWindowController = PreferencesWindowController()
+      
         self.preferencesWindowController.viewControllers = [ GeneralPreferencesViewController(nibName: "GeneralPreferences", bundle: nil), AdvancedPreferencesViewController(nibName: "AdvancedPreferences", bundle: nil) ]
 
               self.preferencesWindowController.showPreferencesWindow()
