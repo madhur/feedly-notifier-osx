@@ -71,11 +71,12 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         let delegate = NSApplication.shared.delegate as! AppDelegate
         let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: Constants.SETTINGS, action: #selector(delegate.showSettings), keyEquivalent: "s"))
+              menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: Constants.ABOUT, action: #selector(delegate.openAboutLink), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         
-        menu.addItem(NSMenuItem(title: Constants.SETTINGS, action: #selector(delegate.showSettings), keyEquivalent: "s"))
-        menu.addItem(NSMenuItem.separator())
+      
         menu.addItem(NSMenuItem(title: Constants.QUIT, action: #selector(delegate.quit), keyEquivalent: "q"))
         NSMenu.popUpContextMenu(menu, with: NSApp.currentEvent!, for: sender)
     }

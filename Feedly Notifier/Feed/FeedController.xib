@@ -26,12 +26,12 @@
             <subviews>
                 <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-uD-n4M" userLabel="Scroll View - Table View">
                     <rect key="frame" x="0.0" y="44" width="480" height="456"/>
-                    <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="zYR-d1-NgY">
-                        <rect key="frame" x="1" y="0.0" width="478" height="455"/>
+                    <clipView key="contentView" copiesOnScroll="NO" id="zYR-d1-NgY">
+                        <rect key="frame" x="1" y="1" width="478" height="454"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" headerView="1mg-L5-lo2" viewBased="YES" id="gco-60-juF" userLabel="Feed Table View">
-                                <rect key="frame" x="0.0" y="0.0" width="478" height="430"/>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="75" rowSizeStyle="automatic" viewBased="YES" id="gco-60-juF" userLabel="Feed Table View">
+                                <rect key="frame" x="0.0" y="0.0" width="478" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -51,11 +51,11 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView identifier="feedCellIdentifier" id="QXP-GU-omu" userLabel="Feed Cell" customClass="FeedCell" customModule="Feedly_Notifier" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="1" width="475" height="75"/>
+                                                <rect key="frame" x="1" y="1" width="475" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-bj-QRm">
-                                                        <rect key="frame" x="20" y="30" width="16" height="16"/>
+                                                        <rect key="frame" x="20" y="27" width="16" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="RaE-HS-Rk5"/>
                                                             <constraint firstAttribute="width" constant="16" id="d6A-lF-iLy"/>
@@ -129,10 +129,6 @@
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="1mg-L5-lo2">
-                        <rect key="frame" x="0.0" y="0.0" width="478" height="25"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </tableHeaderView>
                 </scrollView>
                 <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-4i-VIT" userLabel="LoadingView" customClass="FeedLoadingView" customModule="Feedly_Notifier" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="45" width="465" height="455"/>
@@ -140,8 +136,8 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jb-Fz-zxh" userLabel="Loading Label">
                             <rect key="frame" x="221" y="149" width="37" height="16"/>
                             <textFieldCell key="cell" lineBreakMode="clipping" id="jpL-5f-NQc">
-                                <font key="font" usesAppearanceFont="YES"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
