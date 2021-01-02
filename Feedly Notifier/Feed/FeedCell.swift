@@ -26,14 +26,35 @@ class FeedCell: NSTableCellView {
         view.authorLabel.stringValue = subject.origin?.title ?? Constants.UNKNOWN_AUTHOR
         view.postTitle.stringValue = subject.title ?? Constants.UNKNOWN_TITLE
         view.postTime.stringValue = getStringTimeFromPost(item: subject)
-        if let imageUrl = subject.visual?.url {
-            view.postImage.image = NSImage(byReferencing: URL(string: imageUrl)!)
+//        if let imageUrl = subject.visual?.url {
+//            view.postImage.image = NSImage(byReferencing: URL(string: imageUrl)!)
+//        }
+        if let urlForImage = getUrlForImage(subject: subject) {
+            FaviconFinder(url: urlForImage).downloadFavicon { result in
+                       switch result {
+                       case .success(let favicon):
+                           print("URL of Favicon: \(favicon.url)")
+                            view.postImage.image = favicon.image
+
+                       case .failure(let error):
+                           print("Error: \(error)")
+                       }
+                   }
+            
         }
+       
          return view
      }
     
     class func getStringTimeFromPost(item: Item) -> String {
         let interval = TimeInterval.init(exactly: item.crawled / 1000) ?? TimeInterval.init()
         return Date.init(timeIntervalSince1970:interval).timeAgoShort()
+    }
+    
+    class func getUrlForImage(subject: Item) ->URL? {
+        if let href = subject.alternate?.first?.href {
+             return URL(string: href)
+        }
+       return nil
     }
 }

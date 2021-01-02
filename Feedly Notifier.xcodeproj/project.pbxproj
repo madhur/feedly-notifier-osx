@@ -35,10 +35,35 @@
 		55490BD92573F682007CAC8B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BD82573F682007CAC8B /* ErrorResponse.swift */; };
 		55490BDB2573F8C9007CAC8B /* RefreshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55490BDA2573F8C9007CAC8B /* RefreshTokenResponse.swift */; };
 		55C09D1825A0CD3300CDC3FE /* FeedLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D1725A0CD3300CDC3FE /* FeedLoadingView.swift */; };
+		55C09D2225A0EEFC00CDC3FE /* FaviconRelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D1B25A0EEFC00CDC3FE /* FaviconRelType.swift */; };
+		55C09D2325A0EEFC00CDC3FE /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D1C25A0EEFC00CDC3FE /* Regex.swift */; };
+		55C09D2425A0EEFC00CDC3FE /* FaviconFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D1D25A0EEFC00CDC3FE /* FaviconFinder.swift */; };
+		55C09D2525A0EEFC00CDC3FE /* FaviconError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D1E25A0EEFC00CDC3FE /* FaviconError.swift */; };
+		55C09D2625A0EEFC00CDC3FE /* URL+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D2025A0EEFC00CDC3FE /* URL+Parsing.swift */; };
+		55C09D2725A0EEFC00CDC3FE /* String+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D2125A0EEFC00CDC3FE /* String+Removals.swift */; };
+		55C09D2A25A0F07700CDC3FE /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2925A0F07700CDC3FE /* LaunchAtLogin.framework */; };
+		55C09D2B25A0F07700CDC3FE /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2925A0F07700CDC3FE /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55C09D2E25A0F07A00CDC3FE /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */; };
+		55C09D2F25A0F07A00CDC3FE /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55C09D2C25A0F07700CDC3FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				55C09D2B25A0F07700CDC3FE /* LaunchAtLogin.framework in Embed Frameworks */,
+				55C09D2F25A0F07A00CDC3FE /* SwiftSoup.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		55490B9D256800BD007CAC8B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -69,6 +94,16 @@
 		55490BD82573F682007CAC8B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		55490BDA2573F8C9007CAC8B /* RefreshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenResponse.swift; sourceTree = "<group>"; };
 		55C09D1725A0CD3300CDC3FE /* FeedLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingView.swift; sourceTree = "<group>"; };
+		55C09D1B25A0EEFC00CDC3FE /* FaviconRelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaviconRelType.swift; sourceTree = "<group>"; };
+		55C09D1C25A0EEFC00CDC3FE /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		55C09D1D25A0EEFC00CDC3FE /* FaviconFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaviconFinder.swift; sourceTree = "<group>"; };
+		55C09D1E25A0EEFC00CDC3FE /* FaviconError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaviconError.swift; sourceTree = "<group>"; };
+		55C09D2025A0EEFC00CDC3FE /* URL+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Parsing.swift"; sourceTree = "<group>"; };
+		55C09D2125A0EEFC00CDC3FE /* String+Removals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Removals.swift"; sourceTree = "<group>"; };
+		55C09D2925A0F07700CDC3FE /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
+		55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSoup.framework; path = Carthage/Build/Mac/SwiftSoup.framework; sourceTree = "<group>"; };
+		55C09D3025A0F07E00CDC3FE /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
+		55C09D3125A0F0AF00CDC3FE /* SwiftSoup.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftSoup.framework.dSYM; path = Carthage/Build/Mac/SwiftSoup.framework.dSYM; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C09D2A25A0F07700CDC3FE /* LaunchAtLogin.framework in Frameworks */,
+				55C09D2E25A0F07A00CDC3FE /* SwiftSoup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,11 +194,54 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		55C09D1925A0EED800CDC3FE /* Favicon */ = {
+			isa = PBXGroup;
+			children = (
+				55C09D1A25A0EEFC00CDC3FE /* Classes */,
+				55C09D1F25A0EEFC00CDC3FE /* Extensions */,
+			);
+			path = Favicon;
+			sourceTree = "<group>";
+		};
+		55C09D1A25A0EEFC00CDC3FE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				55C09D1B25A0EEFC00CDC3FE /* FaviconRelType.swift */,
+				55C09D1C25A0EEFC00CDC3FE /* Regex.swift */,
+				55C09D1D25A0EEFC00CDC3FE /* FaviconFinder.swift */,
+				55C09D1E25A0EEFC00CDC3FE /* FaviconError.swift */,
+			);
+			name = Classes;
+			path = Carthage/Checkouts/FaviconFinder/Sources/FaviconFinder/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		55C09D1F25A0EEFC00CDC3FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55C09D2025A0EEFC00CDC3FE /* URL+Parsing.swift */,
+				55C09D2125A0EEFC00CDC3FE /* String+Removals.swift */,
+			);
+			name = Extensions;
+			path = Carthage/Checkouts/FaviconFinder/Sources/FaviconFinder/Extensions;
+			sourceTree = SOURCE_ROOT;
+		};
+		55C09D2825A0F07700CDC3FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55C09D3125A0F0AF00CDC3FE /* SwiftSoup.framework.dSYM */,
+				55C09D3025A0F07E00CDC3FE /* LaunchAtLogin.framework.dSYM */,
+				55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */,
+				55C09D2925A0F07700CDC3FE /* LaunchAtLogin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		55DA12752565A05C00F3A490 = {
 			isa = PBXGroup;
 			children = (
 				55DA12802565A05C00F3A490 /* Feedly Notifier */,
 				55DA127F2565A05C00F3A490 /* Products */,
+				55C09D2825A0F07700CDC3FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +256,7 @@
 		55DA12802565A05C00F3A490 /* Feedly Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				55C09D1925A0EED800CDC3FE /* Favicon */,
 				55490BBF256BCC72007CAC8B /* Common */,
 				55490BB42568B832007CAC8B /* Api */,
 				55490BAC25683DFA007CAC8B /* Feed */,
@@ -202,6 +283,7 @@
 				55DA127A2565A05C00F3A490 /* Sources */,
 				55DA127B2565A05C00F3A490 /* Frameworks */,
 				55DA127C2565A05C00F3A490 /* Resources */,
+				55C09D2C25A0F07700CDC3FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,17 +352,22 @@
 			files = (
 				55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */,
 				55490BC1256BCC88007CAC8B /* FeedButton.swift in Sources */,
+				55C09D2225A0EEFC00CDC3FE /* FaviconRelType.swift in Sources */,
 				55490BD7256E19A0007CAC8B /* PreferencesWindowControllerProtocol.swift in Sources */,
 				55490BBC2568CFBE007CAC8B /* CountsResponse.swift in Sources */,
 				55490BD1256E14F0007CAC8B /* GeneralPreferencesViewController.swift in Sources */,
 				55490BBA2568C04E007CAC8B /* ProfileResponse.swift in Sources */,
+				55C09D2725A0EEFC00CDC3FE /* String+Removals.swift in Sources */,
 				55490BD92573F682007CAC8B /* ErrorResponse.swift in Sources */,
+				55C09D2425A0EEFC00CDC3FE /* FaviconFinder.swift in Sources */,
 				55490BC3256BD2A0007CAC8B /* FeedDataDelegate.swift in Sources */,
 				55490BD5256E1946007CAC8B /* PreferencesWindowController.swift in Sources */,
 				55490BC5256BECD5007CAC8B /* Utils.swift in Sources */,
 				55490BB82568BE19007CAC8B /* CategoryResponse.swift in Sources */,
 				55490BB62568B851007CAC8B /* FeedApi.swift in Sources */,
+				55C09D2625A0EEFC00CDC3FE /* URL+Parsing.swift in Sources */,
 				55490BA225680A5E007CAC8B /* FeedlyWebWindowController.swift in Sources */,
+				55C09D2525A0EEFC00CDC3FE /* FaviconError.swift in Sources */,
 				55490B9E256800BD007CAC8B /* Constants.swift in Sources */,
 				55490BDB2573F8C9007CAC8B /* RefreshTokenResponse.swift in Sources */,
 				55490BD3256E1594007CAC8B /* AdvancedPreferencesViewController.swift in Sources */,
@@ -288,6 +375,7 @@
 				55490BB325684454007CAC8B /* FeedCell.swift in Sources */,
 				55490BAB25682D92007CAC8B /* DefaultsUtil.swift in Sources */,
 				55490BCB256C2609007CAC8B /* AboutWindowController.swift in Sources */,
+				55C09D2325A0EEFC00CDC3FE /* Regex.swift in Sources */,
 				55490BBE2568CFC7007CAC8B /* StreamResponse.swift in Sources */,
 				55490BAF25683E3C007CAC8B /* FeedController.swift in Sources */,
 				55C09D1825A0CD3300CDC3FE /* FeedLoadingView.swift in Sources */,
@@ -430,6 +518,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P6G2L65WY6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Feedly Notifier/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +542,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P6G2L65WY6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Feedly Notifier/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
