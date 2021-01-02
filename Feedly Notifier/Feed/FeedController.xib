@@ -54,16 +54,16 @@
                                                 <rect key="frame" x="1" y="1" width="475" height="75"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-bj-QRm">
-                                                        <rect key="frame" x="20" y="39" width="16" height="16"/>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-bj-QRm">
+                                                        <rect key="frame" x="20" y="30" width="16" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="RaE-HS-Rk5"/>
                                                             <constraint firstAttribute="width" constant="16" id="d6A-lF-iLy"/>
                                                         </constraints>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="RIH-lm-S5L"/>
                                                     </imageView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" id="eyq-DV-qgv" userLabel="Post Title label">
-                                                        <rect key="frame" x="75" y="56" width="389" height="16"/>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eyq-DV-qgv" userLabel="Post Title label">
+                                                        <rect key="frame" x="55" y="45" width="389" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Title Post label" id="kZe-Oq-tEk">
                                                             <font key="font" usesAppearanceFont="YES"/>
@@ -71,8 +71,8 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-wT-tLv" userLabel="Post Author Label">
-                                                        <rect key="frame" x="75" y="30" width="149" height="16"/>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-wT-tLv" userLabel="Post Author Label">
+                                                        <rect key="frame" x="55" y="21" width="33" height="14"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Label" id="Og7-lG-n94">
                                                             <font key="font" metaFont="smallSystem"/>
                                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -80,7 +80,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZj-Qq-Zxu" userLabel="Post Time Label">
-                                                        <rect key="frame" x="313" y="30" width="108" height="16"/>
+                                                        <rect key="frame" x="313" y="21" width="108" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="104" id="Cx2-GM-RWh"/>
                                                         </constraints>
@@ -90,21 +90,19 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <box appearanceType="darkAqua" verticalHuggingPriority="750" ambiguous="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="JUY-Ou-wk3">
-                                                        <rect key="frame" x="3" y="-2" width="474" height="5"/>
+                                                    <box appearanceType="darkAqua" verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="JUY-Ou-wk3">
+                                                        <rect key="frame" x="0.0" y="-2" width="475" height="5"/>
                                                     </box>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="cZj-Qq-Zxu" firstAttribute="leading" secondItem="TSg-wT-tLv" secondAttribute="trailing" constant="93" id="6di-xk-h7H"/>
+                                                    <constraint firstItem="ljv-bj-QRm" firstAttribute="centerY" secondItem="QXP-GU-omu" secondAttribute="centerY" id="7uB-jk-PjO"/>
+                                                    <constraint firstItem="JUY-Ou-wk3" firstAttribute="leading" secondItem="QXP-GU-omu" secondAttribute="leading" id="Amb-wH-pme"/>
                                                     <constraint firstAttribute="bottom" secondItem="JUY-Ou-wk3" secondAttribute="bottom" id="Ene-qd-fTZ"/>
-                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="firstBaseline" secondItem="cZj-Qq-Zxu" secondAttribute="firstBaseline" id="P2D-n9-bwv"/>
-                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="leading" secondItem="eyq-DV-qgv" secondAttribute="leading" id="PaY-OG-sp2"/>
-                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="baseline" secondItem="cZj-Qq-Zxu" secondAttribute="baseline" id="V7t-Lw-6Sz"/>
-                                                    <constraint firstItem="ljv-bj-QRm" firstAttribute="top" secondItem="eyq-DV-qgv" secondAttribute="top" id="aTt-qK-uUi"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="leading" secondItem="eyq-DV-qgv" secondAttribute="leading" id="K8y-fe-9EH"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="top" secondItem="eyq-DV-qgv" secondAttribute="bottom" constant="10" id="SXT-ad-vQZ"/>
+                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="firstBaseline" secondItem="cZj-Qq-Zxu" secondAttribute="firstBaseline" id="XcN-Pr-Ztz"/>
                                                     <constraint firstItem="ljv-bj-QRm" firstAttribute="leading" secondItem="QXP-GU-omu" secondAttribute="leading" constant="20" id="cDJ-fX-RlC"/>
-                                                    <constraint firstItem="ljv-bj-QRm" firstAttribute="top" secondItem="QXP-GU-omu" secondAttribute="top" constant="20" id="mPE-Yh-uhx"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cZj-Qq-Zxu" secondAttribute="trailing" constant="56" id="yVT-mb-aze"/>
-                                                    <constraint firstItem="TSg-wT-tLv" firstAttribute="top" secondItem="eyq-DV-qgv" secondAttribute="bottom" constant="10" id="zBj-VT-qMt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JUY-Ou-wk3" secondAttribute="trailing" id="lNs-D7-E6d"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="authorLabel" destination="TSg-wT-tLv" id="jNz-wN-LG8"/>
