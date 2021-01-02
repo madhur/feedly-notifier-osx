@@ -8,11 +8,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FeedController" customModule="Feedly_Notifier" customModuleProvider="target">
             <connections>
+                <outlet property="feedLoadingView" destination="tJS-4i-VIT" id="2be-sW-8vh"/>
                 <outlet property="feedTableView" destination="gco-60-juF" id="Sk3-81-pVy"/>
                 <outlet property="feedlyWebButton" destination="Ya9-Xj-CIt" id="08f-lb-AkB"/>
                 <outlet property="lastUpdatedLabel" destination="Dlr-Gf-bq5" id="jui-3o-Q9h"/>
                 <outlet property="markAllAsReadButton" destination="1ze-OA-P6o" id="Hbp-e8-4fj"/>
-                <outlet property="progressIndicator" destination="8ZI-vo-pnj" id="SNe-f2-2T5"/>
                 <outlet property="refreshButton" destination="SCu-9e-89c" id="K9z-gS-wjU"/>
                 <outlet property="settingsButton" destination="j6T-8L-JEq" id="OCj-2x-nUw"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -24,20 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="378"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-4i-VIT" userLabel="LoadingView">
-                    <rect key="frame" x="158" y="141" width="163" height="96"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <subviews>
-                        <progressIndicator wantsLayer="YES" ambiguous="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
-                            <rect key="frame" x="65" y="32" width="32" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="2bA-9h-NST"/>
-                                <constraint firstAttribute="width" constant="32" id="x42-Ht-miz"/>
-                            </constraints>
-                        </progressIndicator>
-                    </subviews>
-                </customView>
-                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-uD-n4M">
+                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="77" horizontalPageScroll="10" verticalLineScroll="77" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-uD-n4M" userLabel="Scroll View - Table View">
                     <rect key="frame" x="0.0" y="39" width="480" height="339"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" copiesOnScroll="NO" id="zYR-d1-NgY">
@@ -149,6 +136,36 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
+                <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-4i-VIT" userLabel="LoadingView" customClass="FeedLoadingView" customModule="Feedly_Notifier" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="39" width="480" height="314"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jb-Fz-zxh" userLabel="Loading Label">
+                            <rect key="frame" x="221" y="149" width="37" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="jpL-5f-NQc">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <progressIndicator wantsLayer="YES" ambiguous="YES" misplaced="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
+                            <rect key="frame" x="223" y="173" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="2bA-9h-NST"/>
+                                <constraint firstAttribute="width" constant="32" id="x42-Ht-miz"/>
+                            </constraints>
+                        </progressIndicator>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="2Jb-Fz-zxh" firstAttribute="centerY" secondItem="tJS-4i-VIT" secondAttribute="centerY" id="14D-Mk-lJQ"/>
+                        <constraint firstItem="2Jb-Fz-zxh" firstAttribute="centerX" secondItem="tJS-4i-VIT" secondAttribute="centerX" id="ZtQ-nZ-bj1"/>
+                        <constraint firstItem="8ZI-vo-pnj" firstAttribute="centerY" secondItem="tJS-4i-VIT" secondAttribute="centerY" id="uGk-dU-nZ3"/>
+                        <constraint firstItem="8ZI-vo-pnj" firstAttribute="centerX" secondItem="tJS-4i-VIT" secondAttribute="centerX" id="xIY-hi-2vw"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="8ZI-vo-pnj" id="KQI-QR-Ltb"/>
+                        <outlet property="loadingLabel" destination="2Jb-Fz-zxh" id="Jeh-ZM-41w"/>
+                    </connections>
+                </customView>
                 <button toolTip="Settings" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6T-8L-JEq" userLabel="Settings Button" customClass="FeedButton" customModule="Feedly_Notifier" customModuleProvider="target">
                     <rect key="frame" x="442" y="8" width="28" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -203,6 +220,11 @@
                     </connections>
                 </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="tJS-4i-VIT" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="0eO-bb-27o"/>
+                <constraint firstAttribute="trailing" secondItem="tJS-4i-VIT" secondAttribute="trailing" id="EEL-iU-JSV"/>
+                <constraint firstItem="tJS-4i-VIT" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="sRK-H1-Jq0"/>
+            </constraints>
             <point key="canvasLocation" x="140" y="207"/>
         </customView>
     </objects>
