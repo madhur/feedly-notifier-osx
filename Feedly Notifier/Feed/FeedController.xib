@@ -135,22 +135,22 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-4i-VIT" userLabel="LoadingView" customClass="FeedLoadingView" customModule="Feedly_Notifier" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="467" width="480" height="33"/>
+                <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-4i-VIT" userLabel="LoadingView" customClass="FeedLoadingView" customModule="Feedly_Notifier" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="45" width="465" height="455"/>
                     <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jb-Fz-zxh" userLabel="Loading Label">
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jb-Fz-zxh" userLabel="Loading Label">
                             <rect key="frame" x="221" y="149" width="37" height="16"/>
-                            <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="jpL-5f-NQc">
+                            <textFieldCell key="cell" lineBreakMode="clipping" id="jpL-5f-NQc">
                                 <font key="font" usesAppearanceFont="YES"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <progressIndicator wantsLayer="YES" ambiguous="YES" misplaced="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
-                            <rect key="frame" x="223" y="-108" width="32" height="32"/>
+                        <progressIndicator wantsLayer="YES" misplaced="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-vo-pnj" userLabel="Loading View">
+                            <rect key="frame" x="223" y="314" width="16" height="16"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="32" id="2bA-9h-NST"/>
-                                <constraint firstAttribute="width" constant="32" id="x42-Ht-miz"/>
+                                <constraint firstAttribute="height" constant="16" id="2bA-9h-NST"/>
+                                <constraint firstAttribute="width" constant="16" id="x42-Ht-miz"/>
                             </constraints>
                         </progressIndicator>
                     </subviews>
@@ -236,12 +236,14 @@
                 <constraint firstAttribute="bottom" secondItem="Ya9-Xj-CIt" secondAttribute="bottom" constant="13" id="AKf-ea-eyX"/>
                 <constraint firstItem="1ze-OA-P6o" firstAttribute="centerY" secondItem="SCu-9e-89c" secondAttribute="centerY" id="K1f-sF-JYf"/>
                 <constraint firstItem="tJS-4i-VIT" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="KJS-33-2vn"/>
+                <constraint firstItem="tJS-4i-VIT" firstAttribute="top" secondItem="jTk-uD-n4M" secondAttribute="top" id="Vvj-oK-QYE"/>
                 <constraint firstItem="Dlr-Gf-bq5" firstAttribute="centerY" secondItem="j6T-8L-JEq" secondAttribute="centerY" id="WQj-5z-6E2"/>
                 <constraint firstItem="Ya9-Xj-CIt" firstAttribute="centerY" secondItem="1ze-OA-P6o" secondAttribute="centerY" id="b6A-64-Bnc"/>
                 <constraint firstAttribute="bottom" secondItem="jTk-uD-n4M" secondAttribute="bottom" constant="45" id="cJX-jN-bTo"/>
                 <constraint firstItem="SCu-9e-89c" firstAttribute="centerY" secondItem="j6T-8L-JEq" secondAttribute="centerY" id="gis-cF-Kdh"/>
                 <constraint firstItem="Dlr-Gf-bq5" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="kSa-3e-EXq"/>
                 <constraint firstItem="jTk-uD-n4M" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="lzN-GT-efE"/>
+                <constraint firstItem="tJS-4i-VIT" firstAttribute="bottom" secondItem="jTk-uD-n4M" secondAttribute="bottom" id="oJv-rT-Kws"/>
                 <constraint firstItem="tJS-4i-VIT" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="u9X-ym-90p"/>
                 <constraint firstItem="jTk-uD-n4M" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="uLl-Ov-5y6"/>
                 <constraint firstItem="Ya9-Xj-CIt" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="uPK-2U-KkT"/>

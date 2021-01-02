@@ -130,7 +130,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.lastUpdatedDate = Date.init()
         updateLastUpdatedLabel()
         //self.progressIndicator.isHidden = true
-        self.feedLoadingView.state = .loading
+        self.feedLoadingView.state = .idle
         
     }
     
@@ -167,7 +167,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     func refreshFeed() {
         getStream()
         //self.progressIndicator.isHidden = false
-        self.feedLoadingView.state = .idle
+        self.feedLoadingView.state = .loading
     }
     
     func getStream() {

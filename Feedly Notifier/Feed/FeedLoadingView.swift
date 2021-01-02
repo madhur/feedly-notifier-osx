@@ -17,6 +17,11 @@ class FeedLoadingView: NSView {
     @IBOutlet weak var loadingIndicator: NSProgressIndicator!
     @IBOutlet weak var loadingLabel: NSTextField!
     
+    override func viewWillDraw() {
+        loadingLabel.appearance = NSAppearance(named: NSAppearance.Name.aqua)
+        //self.window?.isOpaque = false
+    }
+    
 
     var state: LoadingState = .idle {
         didSet {
@@ -53,7 +58,7 @@ class FeedLoadingView: NSView {
         super.awakeFromNib()
 
         wantsLayer = true
-        layer?.backgroundColor = NSColor.white.cgColor
+        layer?.backgroundColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     }
 
    
