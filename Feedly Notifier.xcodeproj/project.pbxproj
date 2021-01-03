@@ -47,6 +47,7 @@
 		55C09D2F25A0F07A00CDC3FE /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55C09D3325A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D3225A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift */; };
 		55C09D3725A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D3625A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift */; };
+		55C09D3A25A20F6500CDC3FE /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D3925A20F6500CDC3FE /* CategoryList.swift */; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
@@ -108,6 +109,7 @@
 		55C09D3125A0F0AF00CDC3FE /* SwiftSoup.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftSoup.framework.dSYM; path = Carthage/Build/Mac/SwiftSoup.framework.dSYM; sourceTree = "<group>"; };
 		55C09D3225A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGeneralSettingsDataDelegate.swift; sourceTree = "<group>"; };
 		55C09D3625A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAdvancedSettingsDataDelegate.swift; sourceTree = "<group>"; };
+		55C09D3925A20F6500CDC3FE /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +244,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		55C09D3825A20F4F00CDC3FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55C09D3925A20F6500CDC3FE /* CategoryList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		55DA12752565A05C00F3A490 = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +272,7 @@
 		55DA12802565A05C00F3A490 /* Feedly Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				55C09D3825A20F4F00CDC3FE /* Model */,
 				55C09D1925A0EED800CDC3FE /* Favicon */,
 				55490BBF256BCC72007CAC8B /* Common */,
 				55490BB42568B832007CAC8B /* Api */,
@@ -363,6 +374,7 @@
 				55490BBC2568CFBE007CAC8B /* CountsResponse.swift in Sources */,
 				55490BD1256E14F0007CAC8B /* GeneralPreferencesViewController.swift in Sources */,
 				55490BBA2568C04E007CAC8B /* ProfileResponse.swift in Sources */,
+				55C09D3A25A20F6500CDC3FE /* CategoryList.swift in Sources */,
 				55C09D2725A0EEFC00CDC3FE /* String+Removals.swift in Sources */,
 				55C09D3725A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift in Sources */,
 				55490BD92573F682007CAC8B /* ErrorResponse.swift in Sources */,

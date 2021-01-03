@@ -12,8 +12,8 @@ import Cocoa
 
 class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, PreferencesWindowControllerProtocol, FeedGeneralSettingsDataDelegate {
     
-  
-    var categoriesResponse: [CategoryResponse]?
+    
+    var categoriesResponse: [CategoryList]?
     var feedApi: FeedApi!
     
     @IBOutlet weak var startupCheckBox: NSButton!
@@ -28,6 +28,8 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     @IBOutlet weak var showFavIconCheckBox: NSButton!
     
     @IBOutlet weak var categoriesTableView: NSTableView!
+    
+    @IBOutlet weak var categoryCheckBox: NSButtonCell!
     
     func preferencesIdentifier() -> String {
         return "GeneralPreferences"
@@ -44,7 +46,7 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     override func viewDidLoad() {
         self.feedApi = FeedApi(feedGeneralSettingsDataDelegate: self)
         sortingMethodComboBox.selectItem(at: DefaultsUtil.defaults().getSortingMethodSetting())
-      
+        
         self.feedApi.getCategories()
     }
     
@@ -55,7 +57,7 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     @IBAction func showCountsClicked(_ sender: Any) {
         if(showCountsCheckBox.state == NSControl.StateValue.on) {
             DefaultsUtil.defaults().save(key: DefaultKeys.SHOW_COUNTS, value: true)
-        
+            
         }
         else {
             DefaultsUtil.defaults().save(key: DefaultKeys.SHOW_COUNTS,  value: false)
@@ -91,15 +93,45 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
         return self.categoriesResponse?.count ?? 0
     }
     
+    func tableView(_ tableView: NSTableView, setObjectValue object: Any?, for tableColumn: NSTableColumn?, row: Int) {
+        
+        var result = self.categoriesResponse?[row].selected
+        self.categoriesResponse?[row].selected = !result!
+        categoriesTableView.reloadData()
+        print(row)
+    }
+    
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        if(tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "check")) {
+            let cell = NSButtonCell()
+            cell.identifier = tableColumn?.identifier
+            return self.categoriesResponse?[row].selected
+        }
+        else if (tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "category")) {
+            let cell = NSTextField()
+            cell.identifier = tableColumn?.identifier
+            cell.stringValue = self.categoriesResponse?[row].label ?? ""
+            return self.categoriesResponse?[row].label
+        }
+        print(tableColumn!.identifier.rawValue + " " + (tableColumn?.identifier.rawValue)!)
+        
+        return nil
+        
+    }
     
     func categoriesFetched(categoriesResponse: [CategoryResponse]) {
-          print(categoriesResponse)
-        self.categoriesResponse = categoriesResponse
+        print(categoriesResponse)
+        var categoryList : [CategoryList] = []
+        for item in categoriesResponse {
+            categoryList.append(CategoryList(id: item.id, label: item.label, created: item.created))
+        }
+        self.categoriesResponse = categoryList
+        
         self.categoriesTableView.reloadData()
     }
-      
-      
     
     
-   
+    @IBAction func categorySelected(_ sender: NSButtonCell) {
+        print("category selected")      
+    }
 }

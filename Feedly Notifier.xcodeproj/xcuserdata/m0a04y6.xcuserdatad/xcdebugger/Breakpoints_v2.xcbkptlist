@@ -532,5 +532,64 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "5D39956A-E195-43C5-8DC1-B6F071CB4EA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49DD6C5F-BA99-4E82-AE9D-648C38001F1B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Feedly Notifier/Preferences/GeneralPreferencesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "tableView(_:setObjectValue:for:row:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "49DD6C5F-BA99-4E82-AE9D-648C38001F1B - 27151b12e7218df8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feedly_Notifier.GeneralPreferencesViewController.tableView(_: __C.NSTableView, setObjectValue: Swift.Optional&lt;Any&gt;, for: Swift.Optional&lt;__C.NSTableColumn&gt;, row: Swift.Int) -&gt; ()"
+                  moduleName = "Feedly Notifier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/m0a04y6/github/Feedly%20Notifier/Feedly%20Notifier/Preferences/GeneralPreferencesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "241">
+               </Location>
+               <Location
+                  uuid = "49DD6C5F-BA99-4E82-AE9D-648C38001F1B - 27151b12e7218df8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Feedly_Notifier.GeneralPreferencesViewController.tableView(_: __C.NSTableView, setObjectValue: Swift.Optional&lt;Any&gt;, for: Swift.Optional&lt;__C.NSTableColumn&gt;, row: Swift.Int) -&gt; ()"
+                  moduleName = "Feedly Notifier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/m0a04y6/github/Feedly%20Notifier/Feedly%20Notifier/Preferences/GeneralPreferencesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "1631">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
