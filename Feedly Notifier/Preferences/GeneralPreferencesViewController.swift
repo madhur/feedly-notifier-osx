@@ -12,7 +12,6 @@ import Cocoa
 
 class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, PreferencesWindowControllerProtocol, FeedGeneralSettingsDataDelegate {
     
-    
     var categoriesResponse: [CategoryList]?
     var feedApi: FeedApi!
     
@@ -25,7 +24,6 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     @IBOutlet weak var sortingMethodComboBox: NSComboBox!
     
     @IBOutlet weak var updateCategoriesCheckBox: NSButton!
-    @IBOutlet weak var showFavIconCheckBox: NSButton!
     
     @IBOutlet weak var categoriesTableView: NSTableView!
     
@@ -46,6 +44,36 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     override func viewDidLoad() {
         self.feedApi = FeedApi(feedGeneralSettingsDataDelegate: self)
         sortingMethodComboBox.selectItem(at: DefaultsUtil.defaults().getSortingMethodSetting())
+        // Set show counts check box
+        if (DefaultsUtil.defaults().getShowCountSetting()) {
+            showCountsCheckBox.state = NSControl.StateValue.on
+        }
+        else {
+            showCountsCheckBox.state = NSControl.StateValue.off
+        }
+        // Set mark as read setting
+        if (DefaultsUtil.defaults().getMarkReadSetting()) {
+            markAsReadCheckBox.state = NSControl.StateValue.on
+        }
+        else {
+            markAsReadCheckBox.state = NSControl.StateValue.off
+        }
+        // Set update categories check box
+        if (DefaultsUtil.defaults().getSelectedCategoriesSetting()) {
+            updateCategoriesCheckBox.state = NSControl.StateValue.on
+        }
+        else {
+            updateCategoriesCheckBox.state = NSControl.StateValue.off
+        }
+        
+        //Start up setting
+        if (DefaultsUtil.defaults().getStartupSetting()) {
+            startupCheckBox.state = NSControl.StateValue.on
+        }
+        else {
+            startupCheckBox.state = NSControl.StateValue.off
+        }
+        
         
         self.feedApi.getCategories()
     }
@@ -80,11 +108,15 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
         DefaultsUtil.defaults().save(key: DefaultKeys.SORTING_METHOD, value: sortingMethodComboBox.indexOfSelectedItem)
     }
     
-    @IBAction func showFavIconClicked(_ sender: Any) {
-    }
     
     
     @IBAction func updateCategoriesClicked(_ sender: Any) {
+        if (updateCategoriesCheckBox.state == NSControl.StateValue.on) {
+            DefaultsUtil.defaults().save(key: DefaultKeys.SELECTED_CATEGORIES, value: true)
+               }
+               else {
+                   DefaultsUtil.defaults().save(key: DefaultKeys.SELECTED_CATEGORIES, value: false)
+               }
     }
     
     //MARK: Table delgate methods
@@ -98,7 +130,7 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
         var result = self.categoriesResponse?[row].selected
         self.categoriesResponse?[row].selected = !result!
         categoriesTableView.reloadData()
-        print(row)
+        saveCategories()
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
@@ -119,11 +151,24 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
         
     }
     
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        if (updateCategoriesCheckBox.state == NSControl.StateValue.off) {
+            return false
+        }
+        return true
+    }
+    
     func categoriesFetched(categoriesResponse: [CategoryResponse]) {
-        print(categoriesResponse)
+        
+        var storedCategoryList = DefaultsUtil.defaults().getSelectedCategories()
         var categoryList : [CategoryList] = []
         for item in categoriesResponse {
-            categoryList.append(CategoryList(id: item.id, label: item.label, created: item.created))
+            if let storedCategory = storedCategoryList?.first(where: ({$0.id == item.id})) {
+                categoryList.append(CategoryList(id: item.id, label: item.label, created: item.created, selected: storedCategory.selected))
+            }
+            else {
+                categoryList.append(CategoryList(id: item.id, label: item.label, created: item.created))
+            }
         }
         self.categoriesResponse = categoryList
         
@@ -132,6 +177,12 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     
     
     @IBAction func categorySelected(_ sender: NSButtonCell) {
-        print("category selected")      
+       
     }
+    
+    func saveCategories() {
+         DefaultsUtil.defaults().saveSelectedCategories(categoryList: self.categoriesResponse!)
+    }
+    
+    
 }

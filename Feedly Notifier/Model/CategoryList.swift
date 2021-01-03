@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CategoryList {
+struct CategoryList : Codable {
       let id: String
       let label: String
       let created: Int
@@ -19,5 +19,11 @@ struct CategoryList {
         self.label = label
         self.created = created
         self.selected = true
+    }
+    init(id: String, label: String, created: Int, selected: Bool) {
+        self.id = id
+        self.label = label
+        self.created = created
+        self.selected = selected
     }
 }

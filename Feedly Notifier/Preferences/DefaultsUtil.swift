@@ -79,5 +79,22 @@ class DefaultsUtil {
         return DefaultsUtil.userDefault.bool(forKey: DefaultKeys.SELECTED_CATEGORIES)
     }
     
+    func saveSelectedCategories(categoryList: [CategoryList]) {
+        let encoder = JSONEncoder()
+        if let categoryListEncoded = try? encoder.encode(categoryList) {
+           
+            DefaultsUtil.userDefault.set(categoryListEncoded, forKey: DefaultKeys.CATEGORIES_LIST)
+        }
+    }
+    
+    func getSelectedCategories() -> [CategoryList]? {
+        if let savedCategoryList = DefaultsUtil.userDefault.object(forKey: DefaultKeys.CATEGORIES_LIST) as? Data {
+            let decoder = JSONDecoder()
+            if let decodedCategoryList = try? decoder.decode([CategoryList].self, from: savedCategoryList) {
+               return decodedCategoryList
+            }
+        }
+        return nil
+    }
     
 }
