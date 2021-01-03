@@ -45,6 +45,8 @@
 		55C09D2B25A0F07700CDC3FE /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2925A0F07700CDC3FE /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55C09D2E25A0F07A00CDC3FE /* SwiftSoup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */; };
 		55C09D2F25A0F07A00CDC3FE /* SwiftSoup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55C09D3325A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D3225A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift */; };
+		55C09D3725A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09D3625A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift */; };
 		55DA12822565A05C00F3A490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DA12812565A05C00F3A490 /* AppDelegate.swift */; };
 		55DA12842565A05E00F3A490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12832565A05E00F3A490 /* Assets.xcassets */; };
 		55DA12872565A05E00F3A490 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DA12852565A05E00F3A490 /* MainMenu.xib */; };
@@ -104,6 +106,8 @@
 		55C09D2D25A0F07A00CDC3FE /* SwiftSoup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSoup.framework; path = Carthage/Build/Mac/SwiftSoup.framework; sourceTree = "<group>"; };
 		55C09D3025A0F07E00CDC3FE /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
 		55C09D3125A0F0AF00CDC3FE /* SwiftSoup.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftSoup.framework.dSYM; path = Carthage/Build/Mac/SwiftSoup.framework.dSYM; sourceTree = "<group>"; };
+		55C09D3225A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedGeneralSettingsDataDelegate.swift; sourceTree = "<group>"; };
+		55C09D3625A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAdvancedSettingsDataDelegate.swift; sourceTree = "<group>"; };
 		55DA127E2565A05C00F3A490 /* Feedly Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedly Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55DA12812565A05C00F3A490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55DA12832565A05E00F3A490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				55490BB225684454007CAC8B /* FeedCell.swift */,
 				55490BC2256BD2A0007CAC8B /* FeedDataDelegate.swift */,
 				55C09D1725A0CD3300CDC3FE /* FeedLoadingView.swift */,
+				55C09D3225A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift */,
+				55C09D3625A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				55490BD1256E14F0007CAC8B /* GeneralPreferencesViewController.swift in Sources */,
 				55490BBA2568C04E007CAC8B /* ProfileResponse.swift in Sources */,
 				55C09D2725A0EEFC00CDC3FE /* String+Removals.swift in Sources */,
+				55C09D3725A1DE1300CDC3FE /* FeedAdvancedSettingsDataDelegate.swift in Sources */,
 				55490BD92573F682007CAC8B /* ErrorResponse.swift in Sources */,
 				55C09D2425A0EEFC00CDC3FE /* FaviconFinder.swift in Sources */,
 				55490BC3256BD2A0007CAC8B /* FeedDataDelegate.swift in Sources */,
@@ -373,6 +380,7 @@
 				55490BD3256E1594007CAC8B /* AdvancedPreferencesViewController.swift in Sources */,
 				55490BA925682940007CAC8B /* TokenResponse.swift in Sources */,
 				55490BB325684454007CAC8B /* FeedCell.swift in Sources */,
+				55C09D3325A1D77B00CDC3FE /* FeedGeneralSettingsDataDelegate.swift in Sources */,
 				55490BAB25682D92007CAC8B /* DefaultsUtil.swift in Sources */,
 				55490BCB256C2609007CAC8B /* AboutWindowController.swift in Sources */,
 				55C09D2325A0EEFC00CDC3FE /* Regex.swift in Sources */,

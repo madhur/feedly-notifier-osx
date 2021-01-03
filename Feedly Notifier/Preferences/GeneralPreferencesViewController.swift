@@ -10,7 +10,11 @@ import Foundation
 import Cocoa
 
 
-class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, PreferencesWindowControllerProtocol {
+class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, PreferencesWindowControllerProtocol, FeedGeneralSettingsDataDelegate {
+    
+  
+    var categoriesResponse: [CategoryResponse]?
+    var feedApi: FeedApi!
     
     @IBOutlet weak var startupCheckBox: NSButton!
     
@@ -38,7 +42,10 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     }
     
     override func viewDidLoad() {
+        self.feedApi = FeedApi(feedGeneralSettingsDataDelegate: self)
         sortingMethodComboBox.selectItem(at: DefaultsUtil.defaults().getSortingMethodSetting())
+      
+        self.feedApi.getCategories()
     }
     
     
@@ -77,4 +84,22 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func updateCategoriesClicked(_ sender: Any) {
     }
+    
+    //MARK: Table delgate methods
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return self.categoriesResponse?.count ?? 0
+    }
+    
+    
+    func categoriesFetched(categoriesResponse: [CategoryResponse]) {
+          print(categoriesResponse)
+        self.categoriesResponse = categoriesResponse
+        self.categoriesTableView.reloadData()
+    }
+      
+      
+    
+    
+   
 }

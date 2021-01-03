@@ -10,14 +10,22 @@ import Foundation
 
 struct FeedApi {
     weak var feedDataDelegate: FeedDataDelegate?
+    weak var feedGeneralSettingsDataDelegate: FeedGeneralSettingsDataDelegate?
+    weak var feedAdvancedSettingsDataDelegate: FeedAdvancedSettingsDataDelegate?
     
     init (feedDataDelegate: FeedDataDelegate) {
         self.feedDataDelegate = feedDataDelegate
     }
+    init(feedGeneralSettingsDataDelegate: FeedGeneralSettingsDataDelegate) {
+        self.feedGeneralSettingsDataDelegate = feedGeneralSettingsDataDelegate
+    }
+    init(feedAdvancedSettingsDataDelegate: FeedAdvancedSettingsDataDelegate) {
+        self.feedAdvancedSettingsDataDelegate = feedAdvancedSettingsDataDelegate
+    }
     
     func getToken() -> String? {
         let token = DefaultsUtil.defaults().get(key: DefaultKeys.ACCESS_TOKEN)
-        print("token " + token!)
+       // print("token " + token!)
         return token
     }
     
@@ -29,6 +37,9 @@ struct FeedApi {
             }
             do {
                 let res = try JSONDecoder().decode([CategoryResponse].self, from: data)
+                DispatchQueue.main.async {
+                    self.feedGeneralSettingsDataDelegate?.categoriesFetched(categoriesResponse: res)
+                }
                 // print(res)
             } catch let error {
                 print(error)
@@ -74,7 +85,7 @@ struct FeedApi {
                 DispatchQueue.main.async {
                     self.feedDataDelegate?.feedDataMarkedRead(loadMoreData: loadMoreData)
                 }
-                print("marked unread")
+                //print("marked unread")
             } catch let error {
                 print(error)
             }
@@ -93,13 +104,12 @@ struct FeedApi {
         URLSession.shared.dataTask(with: getRequest(url: url.absoluteString)) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                print ("Madhur error")
                 return
             }
             do {
                // print ("Madhur")
                  if let httpResponse = response as? HTTPURLResponse {
-                       print("statusCode: \(httpResponse.statusCode)")
+                       
                     if httpResponse.statusCode == 401 {
                         self.refreshToken()
                         return
@@ -201,6 +211,9 @@ struct FeedApi {
                 // Save the user id into preference
                 DefaultsUtil.defaults().save(key: DefaultKeys.USER_ID, value: res.id)
                 print(res)
+                DispatchQueue.main.async {
+                    self.feedAdvancedSettingsDataDelegate?.profileFetched(profile: res)
+                }
             } catch let error {
                 print(error)
             }

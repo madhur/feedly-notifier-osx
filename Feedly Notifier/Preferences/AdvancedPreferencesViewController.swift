@@ -9,12 +9,21 @@
 import Foundation
 import Cocoa
 
-class AdvancedPreferencesViewController: NSViewController, PreferencesWindowControllerProtocol {
+class AdvancedPreferencesViewController: NSViewController, PreferencesWindowControllerProtocol, FeedAdvancedSettingsDataDelegate {
+    
     @IBOutlet weak var userNameTextField: NSTextField!
     @IBOutlet weak var emailTextField: NSTextField!
     
+    var feedApi: FeedApi!
+    var profileResponse: ProfileResponse?
+    
     @IBAction func logoutAction(_ sender: Any) {
         
+    }
+    
+    override func viewDidLoad() {
+        self.feedApi = FeedApi(feedAdvancedSettingsDataDelegate: self)
+        self.feedApi.getProfile()
     }
     
     func preferencesIdentifier() -> String {
@@ -27,6 +36,10 @@ class AdvancedPreferencesViewController: NSViewController, PreferencesWindowCont
     
     func preferencesIcon() -> NSImage {
         return NSImage(named: NSImage.advancedName)!
+    }
+    
+    func profileFetched(profile: ProfileResponse) {
+        self.profileResponse = profile
     }
     
     

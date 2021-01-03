@@ -38,6 +38,7 @@ class PreferencesWindowController : NSWindowController, NSToolbarDelegate, NSWin
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
 
     func showPreferencesWindow() {
         guard let window = window, !window.isVisible else {
