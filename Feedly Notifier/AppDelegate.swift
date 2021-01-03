@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var popover: NSPopover!
     var aboutWindowController: AboutWindowController?
     var preferencesWindowController: PreferencesWindowController = PreferencesWindowController()
+    var latestCount: String = ""
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -43,6 +44,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             //button.image = NSImage(named: NSImage.Name("ExampleMenuBarIcon"))
             button.action = #selector(togglePopover(_:))
         }
+        
+        DefaultsUtil.defaults().registerDefaults();
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -89,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       
         self.preferencesWindowController.viewControllers = [ GeneralPreferencesViewController(nibName: "GeneralPreferences", bundle: nil), AdvancedPreferencesViewController(nibName: "AdvancedPreferences", bundle: nil) ]
 
-              self.preferencesWindowController.showPreferencesWindow()
+        self.preferencesWindowController.showPreferencesWindow()
         self.preferencesWindowController.showWindow(self)
     }
     
@@ -98,10 +101,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func setIconText(text: String) {
+        self.latestCount = text
+        var title : String = "";
+        if (DefaultsUtil.defaults().getShowCountSetting()) {
+            title = text
+        }
+        
           if let button = self.statusItem.button {
                   
-            button.title = text
+            button.title = title
         }
+    }
+    
+    func updateIconText() {
+        self.setIconText(text: self.latestCount)
     }
 }
 

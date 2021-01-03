@@ -12,7 +12,7 @@ struct StreamResponse: Codable {
     let continuation: String?
     let id: String
     let updated: Int?
-    let items: [Item]
+    var items: [Item]
 }
 
 struct Item : Codable {

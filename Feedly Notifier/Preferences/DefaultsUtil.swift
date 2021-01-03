@@ -22,6 +22,11 @@ class DefaultsUtil {
         DefaultsUtil.userDefault.set(value, forKey: key)
     }
     
+    func save(key: String, value: Bool) {
+        DefaultsUtil.userDefault.set(value, forKey: key)
+    }
+    
+    
     func get(key: String) -> String? {
         return DefaultsUtil.userDefault.string(forKey: key)
     }
@@ -33,15 +38,20 @@ class DefaultsUtil {
     func clearPreferences() {
     
     }
-    
-    func saveDefaults() {
-        DefaultsUtil.userDefault.set(DefaultValues.START_STARTUP, forKey: DefaultKeys.START_STARTUP)
-        DefaultsUtil.userDefault.set(DefaultValues.SHOW_COUNTS, forKey: DefaultKeys.SHOW_COUNTS)
-        DefaultsUtil.userDefault.set(DefaultValues.MARK_READ_OPEN, forKey: DefaultKeys.MARK_READ_OPEN)
-        DefaultsUtil.userDefault.set(DefaultValues.SORTING_METHOD, forKey: DefaultKeys.SORTING_METHOD)
-        DefaultsUtil.userDefault.set(DefaultValues.SHOW_SITE_ICON, forKey: DefaultKeys.SHOW_SITE_ICON)
-        DefaultsUtil.userDefault.set(DefaultValues.SELECTED_CATEGORIES, forKey: DefaultKeys.SELECTED_CATEGORIES)
+    func registerDefaults() {
+        DefaultsUtil.userDefault.register(defaults: [
+            DefaultKeys.SHOW_COUNTS: true,
+            DefaultKeys.MARK_READ_OPEN: true
+        ])
     }
+//    func saveDefaults() {
+//        DefaultsUtil.userDefault.set(DefaultValues.START_STARTUP, forKey: DefaultKeys.START_STARTUP)
+//        DefaultsUtil.userDefault.set(DefaultValues.SHOW_COUNTS, forKey: DefaultKeys.SHOW_COUNTS)
+//        DefaultsUtil.userDefault.set(DefaultValues.MARK_READ_OPEN, forKey: DefaultKeys.MARK_READ_OPEN)
+//        DefaultsUtil.userDefault.set(DefaultValues.SORTING_METHOD, forKey: DefaultKeys.SORTING_METHOD)
+//        DefaultsUtil.userDefault.set(DefaultValues.SHOW_SITE_ICON, forKey: DefaultKeys.SHOW_SITE_ICON)
+//        DefaultsUtil.userDefault.set(DefaultValues.SELECTED_CATEGORIES, forKey: DefaultKeys.SELECTED_CATEGORIES)
+//    }
     
     func getStartupSetting() -> Bool {
         return DefaultsUtil.userDefault.bool(forKey: DefaultKeys.START_STARTUP)

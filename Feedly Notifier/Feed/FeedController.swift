@@ -59,7 +59,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             entryIds.append(entry.id)
         }
         if (entryIds.count > 0) {
-            feedApi.markRead(entries: entryIds)
+            feedApi.markRead(entries: entryIds, loadMoreData: true)
         }
     }
     
@@ -111,9 +111,12 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         if let url = streamResponse?.items[row].alternate?.first?.href {
             let url = URL(string:url)!
             NSWorkspace.shared.open(url)
-            feedApi.markRead(entries: [(streamResponse?.items[row].id)!])
-              let delegate = NSApplication.shared.delegate as! AppDelegate
-            delegate.closePopover(sender: self)
+            if (DefaultsUtil.defaults().getMarkReadSetting()) {
+                feedApi.markRead(entries: [(streamResponse?.items[row].id)!], loadMoreData: false)
+                self.streamResponse?.items.remove(at: row)
+                self.feedTableView.removeRows(at: IndexSet.init(integer: row), withAnimation: .slideRight)                            
+            }
+
         }
     }
    
@@ -161,8 +164,10 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
 
     
-    func feedDataMarkedRead() {
-       refreshFeed()
+    func feedDataMarkedRead(loadMoreData: Bool) {
+        if (loadMoreData) {
+            refreshFeed()
+        }
     }
     
     func refreshFeed() {
@@ -178,7 +183,7 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     func updateIconText(count: Int) {
          let delegate = NSApplication.shared.delegate as! AppDelegate
-        delegate.setIconText(text: String(count))
+         delegate.setIconText(text: String(count))
     }
     
     

@@ -42,9 +42,25 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     }
     
     @IBAction func showCountsClicked(_ sender: Any) {
+        if(showCountsCheckBox.state == NSControl.StateValue.on) {
+            DefaultsUtil.defaults().save(key: DefaultKeys.SHOW_COUNTS, value: true)
+        
+        }
+        else {
+            DefaultsUtil.defaults().save(key: DefaultKeys.SHOW_COUNTS,  value: false)
+        }
+        
+        let delegate = NSApplication.shared.delegate as! AppDelegate
+        delegate.updateIconText()
     }
     
     @IBAction func markAsReadClicked(_ sender: Any) {
+        if (markAsReadCheckBox.state == NSControl.StateValue.on) {
+            DefaultsUtil.defaults().save(key: DefaultKeys.MARK_READ_OPEN, value: true)
+        }
+        else {
+            DefaultsUtil.defaults().save(key: DefaultKeys.MARK_READ_OPEN, value: false)
+        }
     }
     
     @IBAction func sortingMethodChanged(_ sender: NSComboBox) {

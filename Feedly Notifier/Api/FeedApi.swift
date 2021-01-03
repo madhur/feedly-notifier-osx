@@ -57,7 +57,7 @@ struct FeedApi {
         
     }
     
-    func markRead(entries: [String]) {
+    func markRead(entries: [String], loadMoreData: Bool) {
         let json: [String: Any] = [
             "action": "markAsRead",
             "type": "entries",
@@ -72,7 +72,7 @@ struct FeedApi {
             }
             do {
                 DispatchQueue.main.async {
-                    self.feedDataDelegate?.feedDataMarkedRead()
+                    self.feedDataDelegate?.feedDataMarkedRead(loadMoreData: loadMoreData)
                 }
                 print("marked unread")
             } catch let error {
