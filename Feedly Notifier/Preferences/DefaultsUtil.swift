@@ -26,6 +26,10 @@ class DefaultsUtil {
         DefaultsUtil.userDefault.set(value, forKey: key)
     }
     
+    func save (key: String, value: Int) {
+        DefaultsUtil.userDefault.set(value, forKey: key)
+    }
+    
     
     func get(key: String) -> String? {
         return DefaultsUtil.userDefault.string(forKey: key)
@@ -41,7 +45,8 @@ class DefaultsUtil {
     func registerDefaults() {
         DefaultsUtil.userDefault.register(defaults: [
             DefaultKeys.SHOW_COUNTS: true,
-            DefaultKeys.MARK_READ_OPEN: true
+            DefaultKeys.MARK_READ_OPEN: true,
+            DefaultKeys.SORTING_METHOD:0
         ])
     }
 //    func saveDefaults() {
@@ -66,13 +71,9 @@ class DefaultsUtil {
         return DefaultsUtil.userDefault.bool(forKey: DefaultKeys.MARK_READ_OPEN)
     }
     
-    func getSortingMethodSetting() -> String {
-        return DefaultsUtil.userDefault.string(forKey: DefaultKeys.SORTING_METHOD) ?? DefaultValues.SORTING_METHOD
-       }
-    
-    func getShowSiteIconSetting() -> Bool {
-        return DefaultsUtil.userDefault.bool(forKey: DefaultKeys.SHOW_SITE_ICON)
-    }
+    func getSortingMethodSetting() -> Int {
+        return DefaultsUtil.userDefault.integer(forKey: DefaultKeys.SORTING_METHOD)
+    }    
     
     func getSelectedCategoriesSetting() -> Bool {
         return DefaultsUtil.userDefault.bool(forKey: DefaultKeys.SELECTED_CATEGORIES)

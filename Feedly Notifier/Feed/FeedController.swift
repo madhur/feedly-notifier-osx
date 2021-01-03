@@ -177,7 +177,8 @@ class FeedController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     }
     
     func getStream() {
-        self.feedApi.getStream(ranked: Ranking.NEWEST, pageSize: 20)
+      
+        self.feedApi.getStream(ranked: DefaultsUtil.defaults().getSortingMethodSetting(), pageSize: Constants.PAGE_SIZE)
         self.feedApi.getUnreadCounts()
     }
     

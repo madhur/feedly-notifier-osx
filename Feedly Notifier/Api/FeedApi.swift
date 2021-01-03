@@ -48,7 +48,7 @@ struct FeedApi {
                 DispatchQueue.main.async {
                     self.feedDataDelegate?.updateCounts(countsResponse: res)
                 }
-                 print(res)
+                 //print(res)
             } catch let error {
                 print(error)
             }
@@ -83,9 +83,11 @@ struct FeedApi {
         
     }
     
-    func getStream(ranked: String, pageSize: Int, unreadOnly: Bool = true) {
+    func getStream(ranked: Int, pageSize: Int, unreadOnly: Bool = true) {
         
-        let queryItems = [URLQueryItem(name: "unReadOnly", value: String(unreadOnly)), URLQueryItem(name: "count", value: String(pageSize)), URLQueryItem(name: "ranked", value: ranked)]
+        let ranking: Ranking = Ranking(rawValue: ranked)!
+        let ranked: String = ranking.getRankingStr()
+        let queryItems = [URLQueryItem(name: "unreadOnly", value: String(unreadOnly)), URLQueryItem(name: "count", value: String(pageSize)), URLQueryItem(name: "ranked", value: ranked)]
         let url = getStreamsUrl(queryItems)
         print(url.absoluteString)
         URLSession.shared.dataTask(with: getRequest(url: url.absoluteString)) { data, response, error in
@@ -95,7 +97,7 @@ struct FeedApi {
                 return
             }
             do {
-                print ("Madhur")
+               // print ("Madhur")
                  if let httpResponse = response as? HTTPURLResponse {
                        print("statusCode: \(httpResponse.statusCode)")
                     if httpResponse.statusCode == 401 {

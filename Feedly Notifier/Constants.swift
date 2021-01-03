@@ -58,7 +58,6 @@ struct DefaultKeys {
     static let SHOW_COUNTS = "show_counts"
     static let MARK_READ_OPEN = "mark_read_open"
     static let SORTING_METHOD = "ranking"
-    static let SHOW_SITE_ICON = "show_site_icon"
     static let SELECTED_CATEGORIES = "selected_categories"
     static let CATEGORIES_LIST = "categories_list"
 }
@@ -74,8 +73,20 @@ struct DefaultValues {
     static let CATEGORIES_LIST = "categories_list"
 }
 
-struct Ranking {
-    static let ENGAGEMENT = "engagement"
-    static let NEWEST = "newest"
-    static let OLDEST = "oldest"
+enum Ranking: Int {
+    case newest = 0, oldest, engagement
+    
+    func getRankingStr() -> String {
+        switch self {
+        case Ranking.newest:
+            return "newest"
+           
+        case Ranking.oldest:
+            return "oldest"
+          
+        case Ranking.engagement:
+            return "engagement"
+        
+        }
+    }
 }

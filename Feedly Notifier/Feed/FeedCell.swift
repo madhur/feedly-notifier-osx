@@ -33,7 +33,7 @@ class FeedCell: NSTableCellView {
             FaviconFinder(url: urlForImage).downloadFavicon { result in
                        switch result {
                        case .success(let favicon):
-                           print("URL of Favicon: \(favicon.url)")
+                           //print("URL of Favicon: \(favicon.url)")
                             view.postImage.image = favicon.image
 
                        case .failure(let error):

@@ -37,6 +37,10 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
         return NSImage(named: NSImage.preferencesGeneralName)!
     }
     
+    override func viewDidLoad() {
+        sortingMethodComboBox.selectItem(at: DefaultsUtil.defaults().getSortingMethodSetting())
+    }
+    
     
     @IBAction func startupClicked(_ sender: NSButton) {
     }
@@ -64,6 +68,7 @@ class GeneralPreferencesViewController: NSViewController, NSTableViewDataSource,
     }
     
     @IBAction func sortingMethodChanged(_ sender: NSComboBox) {
+        DefaultsUtil.defaults().save(key: DefaultKeys.SORTING_METHOD, value: sortingMethodComboBox.indexOfSelectedItem)
     }
     
     @IBAction func showFavIconClicked(_ sender: Any) {
